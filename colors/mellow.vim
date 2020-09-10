@@ -111,7 +111,7 @@ hi! link helpNormal StatusLineNC
 
 " Set terminal colors. {{{1
 
-if has('terminal') && g:mellow_terminal_colors
+if g:mellow_terminal_colors
     if has('nvim')
         let g:terminal_color_0 = '#0F0908'
         let g:terminal_color_1 = '#AF0032'
@@ -129,7 +129,7 @@ if has('terminal') && g:mellow_terminal_colors
         let g:terminal_color_13 = '#8A4B53'
         let g:terminal_color_14 = '#D47D49'
         let g:terminal_color_15 = '#F2DDBC'
-    else
+    elseif has('terminal')
         let g:terminal_ansi_colors = [
                     \ '#0F0908',
                     \ '#AF0032',
