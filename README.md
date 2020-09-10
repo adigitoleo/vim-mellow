@@ -28,7 +28,10 @@ Taken on alacritty with LiberationMono font:
 
 ![example-split-terminal](./img/example_split_with_terminal.png)
 
-![syntax-groups-part1](./img/syntax_groups_part1.png) ![syntax-groups-part2](./img/syntax_groups_part2.png)
+<p align="middle">
+    <img src="./img/syntax_groups_part1.png" width="48%" />
+    <img src="./img/syntax_groups_part2.png" width="48%" />
+</p>
 
 
 ## Installation
