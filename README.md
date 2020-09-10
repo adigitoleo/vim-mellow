@@ -4,7 +4,7 @@
 
 ![palette](./img/colorscheme.png)
 
-`Plug 'adigitoleo/vim-mellow'` (for vim-plug users)
+`Plug 'adigitoleo/vim-mellow'`
 
 **Note for terminal users:** This theme requires 24-bit RGB color support. If
 your terminal is [compatible], enable RGB colors via `:set termguicolors`
@@ -28,8 +28,7 @@ Taken on alacritty with LiberationMono font:
 
 ![example-split-terminal](./img/example_split_with_terminal.png)
 
-![syntax-groups-part1](./img/syntax_groups_part1.png)
-![syntax-groups-part2](./img/syntax_groups_part2.png)
+![syntax-groups-part1](./img/syntax_groups_part1.png) ![syntax-groups-part2](./img/syntax_groups_part2.png)
 
 
 ## Installation
@@ -64,7 +63,7 @@ xterm-true-color` before opening an issue.
 ### Options
 
 Use mellow color palette in the embedded terminal:
-- enabled (`1`) by default
+- enabled (`1`) by default if your (neo)vim has the terminal feature
 - `:let g:mellow_terminal_colors = 0` to disable
 
 ### Customization
