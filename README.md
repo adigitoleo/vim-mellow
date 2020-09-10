@@ -6,10 +6,8 @@
 
 `Plug 'adigitoleo/vim-mellow'` (for vim-plug users)
 
-**Note for terminal users:**
-
-This theme requires 24-bit RGB color support. If your terminal is [compatible],
-enable RGB colors via `:set termguicolors`
+**Note for terminal users:** This theme requires 24-bit RGB color support. If
+your terminal is [compatible], enable RGB colors via `:set termguicolors`
 
 
 <!-- vim-markdown-toc GFM -->
@@ -31,10 +29,7 @@ Taken on alacritty with LiberationMono font:
 ![example-split-terminal](./img/example_split_with_terminal.png)
 
 ![syntax-groups-part1](./img/syntax_groups_part1.png)
-
 ![syntax-groups-part2](./img/syntax_groups_part2.png)
-
-Still not convinced? Take a look at these [auto-generated previews].
 
 
 ## Installation
@@ -59,9 +54,12 @@ folder inside:
 
 ```vim
 :set termguicolors
-:set background=light
 :colorscheme mellow
 ```
+
+If it doesn't look right, it probably isn't. If you're sure you are running in
+a [compatible] terminal, read `:help 'termguicolors'` and `:help
+xterm-true-color` before opening an issue.
 
 ### Options
 
@@ -85,15 +83,15 @@ augroup END
 ## Miscellaneous
 
 This theme was first motivated by a lack of `bg=light` option in [vim-farout],
-which uses similar colors in a completely different arrangement. I wanted a
+which uses a similar palette in a completely different arrangement. I wanted a
 light theme with moderate contrast and warm colors, that didn't make me want to
 change every single syntax file. To me, mellow lies mid-way between `:syntax
-off` and popular themes like [solarized] or [gruvbox]. And that's just the way
-I like it :)
+off` and popular themes like [solarized] or [gruvbox].
+
+And that's just the way I like it :)
 
 Some more links, for your convenience:
 - [RGB mellow palette]
-- [auto-generated previews]
 
 *Stay tuned for mellow's fellows (i3wm, rofi, ...)*
 
@@ -117,5 +115,3 @@ Some more links, for your convenience:
 [gruvbox]: https://github.com/morhetz/gruvbox
 
 [RGB mellow palette]: https://colourco.de/freebuild/e0ccae-f2ddbc-0f0908-291916-af0032-ff7477-4c6e25-84bf40-a67458-f5bb89-573e55-8a7b85-66292f-8a4b53-bf472c-d47d49
-
-[auto-generated previews]: http://bytefluent.com/vivify/index.php?remote=github.com%2Fadigitoleo%2Fvim-mellow
