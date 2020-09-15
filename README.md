@@ -26,12 +26,12 @@ your terminal is [compatible], enable RGB colors via `:set termguicolors`
 
 Taken on alacritty with LiberationMono font:
 
-![example-split-terminal](./img/example_split_with_terminal.png)
-
 <p align="middle">
     <img src="./img/syntax_groups_part1.png" width="48%" />
     <img src="./img/syntax_groups_part2.png" width="48%" />
 </p>
+
+![example-split-terminal](./img/example_split_with_terminal.png)
 
 
 ## Installation
