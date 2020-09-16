@@ -61,6 +61,8 @@ folder inside:
 :colorscheme mellow
 ```
 
+You can omit the `termguicolors` part if you are running (neo)vim in a GUI.
+
 If it doesn't look right, it probably isn't. If you're sure you are running in
 a [compatible] terminal, read `:help 'termguicolors'` and `:help
 xterm-true-color` before opening an issue.
@@ -93,6 +95,38 @@ change every single syntax file. To me, mellow lies mid-way between `:syntax
 off` and popular themes like [solarized] or [gruvbox].
 
 And that's just the way I like it :)
+
+Since the theme uses only 16 colors, you can use the same palette in your
+terminal of choice. For example, for alacritty I use:
+
+```yaml
+colors:
+    primary:
+        background: '#f2ddbc'
+        foreground: '#0f0908'
+
+    normal:
+        black:      '#0f0908'
+        red:        '#af0032'
+        green:      '#4c6e25'
+        yellow:     '#a67458'
+        blue:       '#573e55'
+        magenta:    '#66292f'
+        cyan:       '#bf472c'
+        white:      '#e0ccae'
+
+    bright:
+        black:      '#291916'
+        red:        '#ff7477'
+        green:      '#84bf40'
+        yellow:     '#f5bb89'
+        blue:       '#8a7b85'
+        magenta:    '#8a4b53'
+        cyan:       '#d47d49'
+        white:      '#f2ddbc'
+```
+
+Consult the relevant documentation for how to set this up in other programs.
 
 Some more links, for your convenience:
 - [RGB mellow palette]
