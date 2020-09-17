@@ -5,8 +5,8 @@
 "   |_| |_| |_|\___|_|_|\___/ \_/\_(_)  \_/ |_|_| |_| |_|
 "
 " Maintainer: adigitoleo <adigitoleo@protonmail.com>
-" Version: 0.4
-" Description: A warm, minimalist light colorscheme for (neo)vim
+" Version: 0.5
+" Description: A warm, minimalist colorscheme for (neo)vim
 
 
 let s:script_name = expand("<sfile>:t:r")
@@ -78,44 +78,44 @@ if &background ==# 'light'
     hi Visual           guibg=#F5BB89 guifg=NONE gui=NONE
     hi WildMenu         guibg=#E0CCAE guifg=#BF472C gui=NONE
 
-else  " Experimental dark mode
-    hi Comment          guibg=NONE guifg=#8a4b53 gui=NONE
-    hi Constant         guibg=NONE guifg=#f5bb89 gui=NONE
-    hi Cursor           guibg=#f5bb89 guifg=#0f0809 gui=NONE
+else
+    hi Comment          guibg=NONE guifg=#8A4B53 gui=NONE
+    hi Constant         guibg=NONE guifg=#ECCD9D gui=NONE
+    hi Cursor           guibg=#ECCD9D guifg=#0F0809 gui=NONE
     hi CursorLine       guibg=#3D241F guifg=NONE gui=NONE
-    hi CursorLineNr     guibg=#3D241F guifg=#BF472C gui=bold
-    hi DiffAdd          guibg=#4C6E25 guifg=NONE gui=NONE
-    hi DiffDelete       guibg=#FF7477 guifg=#AF0032 gui=NONE
-    hi Directory        guibg=NONE guifg=#BF472C gui=NONE
-    hi EndOfBuffer      guibg=#3D241F guifg=#8A7B85 gui=NONE
+    hi CursorLineNr     guibg=#3D241F guifg=#D47D49 gui=bold
+    hi DiffAdd          guibg=#577E2A guifg=NONE gui=NONE
+    hi DiffDelete       guibg=NONE guifg=#FF7477 gui=NONE
+    hi Directory        guibg=NONE guifg=#D47D49 gui=NONE
+    hi EndOfBuffer      guibg=#3D241F guifg=#9F939B gui=NONE
     hi Error            guibg=NONE guifg=#FF7477 gui=NONE
-    hi ErrorMsg         guibg=#AF0032 guifg=#FF7477 gui=NONE
-    hi Function         guibg=NONE guifg=#a67458 gui=NONE
-    hi Identifier       guibg=NONE guifg=#d47d49 gui=NONE
+    hi ErrorMsg         guibg=#AF0032 guifg=#ECCD9D gui=NONE
+    hi Function         guibg=NONE guifg=#BF9169 gui=NONE
+    hi Identifier       guibg=NONE guifg=#F5BB89 gui=NONE
     hi Ignore           guibg=NONE guifg=NONE gui=NONE
-    hi IncSearch        guibg=#66292F guifg=#f5bb89 gui=NONE
-    hi LineNr           guibg=#3D241F guifg=#8a4b53 gui=NONE
-    hi ModeMsg          guibg=NONE guifg=#BF472C gui=bold
-    hi MoreMsg          guibg=NONE guifg=#8a4b53 gui=bold
+    hi IncSearch        guibg=#66292F guifg=#ECCD9D gui=NONE
+    hi LineNr           guibg=#3D241F guifg=#8A4B53 gui=NONE
+    hi ModeMsg          guibg=NONE guifg=#D47D49 gui=bold
+    hi MoreMsg          guibg=NONE guifg=#BF9169 gui=bold
     hi NonText          guibg=#3D241F guifg=#FF7477 gui=NONE
-    hi Normal           guibg=#0f0809 guifg=#f5bb89 gui=NONE
-    hi Pmenu            guibg=#3D241F guifg=#8a4b53 gui=NONE
-    hi PmenuSel         guibg=#573e55 guifg=#BF472C gui=NONE
-    hi PmenuThumb       guibg=#8A4B53 guifg=#573e55 gui=NONE
-    hi Special          guibg=NONE guifg=#8A7B85 gui=NONE
-    hi SpellBad         guibg=#0f0809 guifg=#AF0032 gui=underline guisp=#FF7477
-    hi SpellCap         guibg=#0f0809 guifg=#e0ccae gui=underline guisp=#8A7B85
-    hi SpellLocal       guibg=#0f0809 guifg=#BF472C gui=underline guisp=#D47D49
-    hi SpellRare        guibg=#0f0809 guifg=#8a4b53 gui=underline guisp=#573e55
-    hi Statement        guibg=NONE guifg=#AF0032 gui=NONE
-    hi StatusLine       guibg=#66292F guifg=#d47d49 gui=NONE
-    hi StatusLineNC     guibg=#573e55 guifg=#8a4b53 gui=NONE
-    hi String           guibg=NONE guifg=#e0ccae gui=NONE
-    hi TabLineFill      guibg=#573e55 guifg=#3D241F gui=NONE
-    hi Todo             guibg=NONE guifg=#8A7B85 gui=bold
+    hi Normal           guibg=#0F0809 guifg=#ECCD9D gui=NONE
+    hi Pmenu            guibg=#3D241F guifg=#8A4B53 gui=NONE
+    hi PmenuSel         guibg=#66292F guifg=#FF7477 gui=NONE
+    hi PmenuThumb       guibg=#8A4B53 guifg=#66292F gui=NONE
+    hi Special          guibg=NONE guifg=#9F939B gui=NONE
+    hi SpellBad         guibg=#0F0809 guifg=#AF0032 gui=underline guisp=#FF7477
+    hi SpellCap         guibg=#0F0809 guifg=#D3C1A6 gui=underline guisp=#9F939B
+    hi SpellLocal       guibg=#0F0809 guifg=#D47D49 gui=underline guisp=#D47D49
+    hi SpellRare        guibg=#0F0809 guifg=#805B7D gui=underline guisp=#805B7D
+    hi Statement        guibg=NONE guifg=#BF472C gui=NONE
+    hi StatusLine       guibg=#66292F guifg=#D47D49 gui=NONE
+    hi StatusLineNC     guibg=#3D241F guifg=#8A4B53 gui=NONE
+    hi String           guibg=NONE guifg=#D3C1A6 gui=NONE
+    hi TabLineFill      guibg=#3D241F guifg=#3D241F gui=NONE
+    hi Todo             guibg=NONE guifg=#9F939B gui=bold
     hi Underlined       guibg=NONE guifg=NONE gui=underline
-    hi Visual           guibg=#573E55 guifg=NONE gui=NONE
-    hi WildMenu         guibg=#3D241F guifg=#BF472C gui=NONE
+    hi Visual           guibg=#66292F guifg=NONE gui=NONE
+    hi WildMenu         guibg=#3D241F guifg=#D47D49 gui=NONE
 endif
 
 " Define linked groups. {{{1
@@ -191,10 +191,45 @@ if g:mellow_terminal_colors
                         \ '#F2DDBC',
                         \ ]
         endif
+
     else
-        echohl WarningMsg
-        echom "[mellow] dark theme doesn't support terminal colors"
-        echohl None
+        if has("nvim")
+            let g:terminal_color_0 = '#0F0908'
+            let g:terminal_color_1 = '#AF0032'
+            let g:terminal_color_2 = '#577E2A'
+            let g:terminal_color_3 = '#BF9169'
+            let g:terminal_color_4 = '#805B7D'
+            let g:terminal_color_5 = '#66292F'
+            let g:terminal_color_6 = '#BF472C'
+            let g:terminal_color_7 = '#D3C1A6'
+            let g:terminal_color_8 = '#3D241F'
+            let g:terminal_color_9 = '#FF7477'
+            let g:terminal_color_10 = '#84BF40'
+            let g:terminal_color_11 = '#F5BB89'
+            let g:terminal_color_12 = '#9F939B'
+            let g:terminal_color_13 = '#8A4B53'
+            let g:terminal_color_14 = '#D47D49'
+            let g:terminal_color_15 = '#ECCD9D'
+        elseif has("terminal")
+            let g:terminal_ansi_colors = [
+                        \ '#0F0908',
+                        \ '#AF0032',
+                        \ '#577E2A',
+                        \ '#BF9169',
+                        \ '#805B7D',
+                        \ '#66292F',
+                        \ '#BF472C',
+                        \ '#D3C1A6',
+                        \ '#3D241F',
+                        \ '#FF7477',
+                        \ '#84BF40',
+                        \ '#F5BB89',
+                        \ '#9F939B',
+                        \ '#8A4B53',
+                        \ '#D47D49',
+                        \ '#ECCD9D',
+                        \ ]
+        endif
     endif
 endif
 
@@ -231,19 +266,19 @@ if g:mellow_user_colors
 
         " 3: Pink fg with inherited bg from StatusLine(NC).
         hi default User3        guibg=#66292F guifg=#FF7477 gui=bold
-        " 4: Dark green fg with inherited bg from StatusLine(NC).
-        hi default User4        guibg=#66292F guifg=#4C6E25 gui=bold
+        " 4: Green fg with inherited bg from StatusLine(NC).
+        hi default User4        guibg=#66292F guifg=#84BF40 gui=bold
 
-        " 5: Magenta bg with off-white fg.
-        hi default User5        guibg=#8A4B53 guifg=#F5BB89 gui=bold
-        " 6: Dark green bg with off-white fg.
-        hi default User6        guibg=#4C6E25 guifg=#F5BB89 gui=bold
-        " 7: Blue bg with off-white fg.
-        hi default User7        guibg=#8A7B85 guifg=#F5BB89 gui=bold
-        " 8: Pink bg with off-white fg.
-        hi default User8        guibg=#AF0032 guifg=#F5BB89 gui=bold
-        " 9: Dark blue bg with off-white fg.
-        hi default User9        guibg=#573E55 guifg=#F5BB89 gui=bold
+        " 5: Magenta bg with dark fg.
+        hi default User5        guibg=#8A4B53 guifg=#3D241F gui=bold
+        " 6: Dark green bg with dark fg.
+        hi default User6        guibg=#577E2A guifg=#3D241F gui=bold
+        " 7: Orange bg with dark fg.
+        hi default User7        guibg=#D47D49 guifg=#3D241F gui=bold
+        " 8: Red bg with dark fg.
+        hi default User8        guibg=#AF0032 guifg=#3D241F gui=bold
+        " 9: Dark blue bg with dark fg.
+        hi default User9        guibg=#805B7D guifg=#3D241F gui=bold
     endif
 endif
 
