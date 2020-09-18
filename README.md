@@ -212,3 +212,5 @@ Some more links, for your convenience:
 [RGB mellow palette (bg=dark)]: https://colourco.de/freebuild/d3c1a6-eccd9d-0f0908-3d241f-af0032-ff7477-577e2a-84bf40-bf9169-f5bb89-805b7d-9f939b-66292f-8a4b53-bf472c-d47d49
 
 [mellow statusline]: https://github.com/adigitoleo/vim-mellow-statusline
+
+[ALE]: https://github.com/dense-analysis/ale
