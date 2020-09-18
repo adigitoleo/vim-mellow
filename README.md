@@ -99,6 +99,16 @@ augroup fix_colors
 augroup END
 ```
 
+If you use [ALE], you might prefer stronger highlights for warnings/errors:
+
+```vim
+augroup ale_highlights
+    au!
+    autocmd ColorScheme mellow hi link ALEWarning Visual
+    autocmd ColorScheme mellow hi link ALEErrorLine DiffDelete
+augroup END
+```
+
 ## Miscellaneous
 
 This theme was first motivated by a lack of `bg=light` option in [vim-farout],
