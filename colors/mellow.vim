@@ -5,7 +5,7 @@
 "   |_| |_| |_|\___|_|_|\___/ \_/\_(_)  \_/ |_|_| |_| |_|
 "
 " Maintainer: adigitoleo <adigitoleo@protonmail.com>
-" Version: 0.5
+" Version: 0.6
 " Description: A warm, minimalist colorscheme for (neo)vim
 
 
