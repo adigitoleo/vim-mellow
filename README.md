@@ -27,23 +27,23 @@ your terminal is [compatible], enable RGB colors via `:set termguicolors`
 Taken on alacritty with LiberationMono font:
 
 <p align="center" style="margin: 4%;">
-    <img src="./img/syntax_light_v050.png" width="48%" />
-    <img src="./img/syntax_dark_v050.png" width="48%" />
+    <img src="./img/syntax_light.png" width="48%" />
+    <img src="./img/syntax_dark.png" width="48%" />
 </p>
 
 *Do you want a statusline as well? Try the [mellow statusline]!*
 
 ### Light mode
 
-![light-palette](./img/palette_light_v050.png)
+![light-palette](./img/palette_light.png)
 
-![light-syntax](./img/mellow_light_v050.png)
+![light-syntax](./img/mellow_light.png)
 
 ### Dark mode
 
-![dark-palette](./img/palette_dark_v060.png)
+![dark-palette](./img/palette_dark.png)
 
-![dark-syntax](./img/mellow_dark_v060.png)
+![dark-syntax](./img/mellow_dark.png)
 
 
 ## Installation
