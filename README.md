@@ -120,66 +120,8 @@ off` and popular themes like [solarized] or [gruvbox].
 And that's just the way I like it :)
 
 Since the theme uses only 16 colors, you can use the same colors in your
-terminal of choice. For example, for alacritty I use:
-
-```yaml
-schemes:
-    mellow_light: &light
-
-        primary:
-            background: '#F2DDBC'
-            foreground: '#0F0908'
-
-        normal:
-            black:      '#0F0908'
-            red:        '#AF0032'
-            green:      '#4C6E25'
-            yellow:     '#A67458'
-            blue:       '#573E55'
-            magenta:    '#66292F'
-            cyan:       '#BF472C'
-            white:      '#E0CCAE'
-
-        bright:
-            black:      '#3D241F'
-            red:        '#FF7477'
-            green:      '#84BF40'
-            yellow:     '#F5BB89'
-            blue:       '#8A7B85'
-            magenta:    '#8A4B53'
-            cyan:       '#D47D49'
-            white:      '#F2DDBC'
-
-    mellow_dark: &dark
-
-        primary:
-            background: '#0F0908'
-            foreground: '#ECCD9D'
-
-        normal:
-            black:      '#0F0908'
-            red:        '#AF0032'
-            green:      '#577E2A'
-            yellow:     '#BF9169'
-            blue:       '#896186'
-            magenta:    '#66292F'
-            cyan:       '#BF472C'
-            white:      '#D3C1A6'
-
-        bright:
-            black:      '#3D241F'
-            red:        '#FF7477'
-            green:      '#84BF40'
-            yellow:     '#F5BB89'
-            blue:       '#9F939B'
-            magenta:    '#8A4B53'
-            cyan:       '#D47D49'
-            white:      '#ECCD9D'
-
-colors: *light
-```
-
-Consult the relevant documentation for how to set this up in other programs.
+terminal of choice. Check the [wiki] for an example Alacritty theme, as well as
+experimental mellow colorschemes for some other Linux stuff.
 
 Some more links, for your convenience:
 - [RGB mellow palette (bg=light)]
@@ -188,6 +130,8 @@ Some more links, for your convenience:
 
 
 [NOTE]: # ( ------------ PUT ALL EXTERNAL LINKS BELOW THIS LINE ------------ )
+
+[wiki]: https://github.com/adigitoleo/vim-mellow/wiki
 
 [compatible]: https://gist.github.com/XVilka/8346728
 
