@@ -186,8 +186,6 @@ Some more links, for your convenience:
 - [RGB mellow palette (bg=dark)]
 - [mellow statusline]
 
-*Stay tuned for mellow's fellows (i3wm, rofi, ...)*
-
 
 [NOTE]: # ( ------------ PUT ALL EXTERNAL LINKS BELOW THIS LINE ------------ )
 
