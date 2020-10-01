@@ -69,8 +69,8 @@ if &background ==# 'light'
     hi SpellLocal       guibg=#F2DDBC guifg=#BF472C gui=underline guisp=#D47D49
     hi SpellRare        guibg=#F2DDBC guifg=#A67458 gui=underline guisp=#F5BB89
     hi Statement        guibg=NONE guifg=#AF0032 gui=NONE
-    hi StatusLine       guibg=#8A4B53 guifg=#F5BB89 gui=NONE
-    hi StatusLineNC     guibg=#F5BB89 guifg=#A67458 gui=NONE
+    hi StatusLine       guibg=#8A4B53 guifg=#F5BB89 gui=bold
+    hi StatusLineNC     guibg=#F5BB89 guifg=#A67458 gui=bold
     hi String           guibg=NONE guifg=#573E55 gui=NONE
     hi TabLineFill      guibg=#F5BB89 guifg=#3D241F gui=NONE
     hi Todo             guibg=NONE guifg=#8A7B85 gui=bold
@@ -108,8 +108,8 @@ else
     hi SpellLocal       guibg=#0F0809 guifg=#D47D49 gui=underline guisp=#D47D49
     hi SpellRare        guibg=#0F0809 guifg=#896186 gui=underline guisp=#896186
     hi Statement        guibg=NONE guifg=#BF472C gui=NONE
-    hi StatusLine       guibg=#66292F guifg=#D47D49 gui=NONE
-    hi StatusLineNC     guibg=#3D241F guifg=#8A4B53 gui=NONE
+    hi StatusLine       guibg=#66292F guifg=#D47D49 gui=bold
+    hi StatusLineNC     guibg=#3D241F guifg=#8A4B53 gui=bold
     hi String           guibg=NONE guifg=#D3C1A6 gui=NONE
     hi TabLineFill      guibg=#3D241F guifg=#3D241F gui=NONE
     hi Todo             guibg=NONE guifg=#9F939B gui=bold
