@@ -41,9 +41,9 @@ Taken on alacritty with LiberationMono font:
 
 ### Dark mode
 
-![dark-palette](./img/palette_dark_v050.png)
+![dark-palette](./img/palette_dark_v060.png)
 
-![dark-syntax](./img/mellow_dark_v050.png)
+![dark-syntax](./img/mellow_dark_v060.png)
 
 
 ## Installation
@@ -161,7 +161,7 @@ schemes:
             red:        '#AF0032'
             green:      '#577E2A'
             yellow:     '#BF9169'
-            blue:       '#805B7D'
+            blue:       '#896186'
             magenta:    '#66292F'
             cyan:       '#BF472C'
             white:      '#D3C1A6'
@@ -186,8 +186,6 @@ Some more links, for your convenience:
 - [RGB mellow palette (bg=dark)]
 - [mellow statusline]
 
-*Stay tuned for mellow's fellows (i3wm, rofi, ...)*
-
 
 [NOTE]: # ( ------------ PUT ALL EXTERNAL LINKS BELOW THIS LINE ------------ )
 
@@ -209,7 +207,7 @@ Some more links, for your convenience:
 
 [RGB mellow palette (bg=light)]: https://colourco.de/freebuild/e0ccae-f2ddbc-0f0908-3d241f-af0032-ff7477-4c6e25-84bf40-a67458-f5bb89-573e55-8a7b85-66292f-8a4b53-bf472c-d47d49
 
-[RGB mellow palette (bg=dark)]: https://colourco.de/freebuild/d3c1a6-eccd9d-0f0908-3d241f-af0032-ff7477-577e2a-84bf40-bf9169-f5bb89-805b7d-9f939b-66292f-8a4b53-bf472c-d47d49
+[RGB mellow palette (bg=dark)]: https://colourco.de/freebuild/d3c1a6-eccd9d-0f0908-3d241f-af0032-ff7477-577e2a-84bf40-bf9169-f5bb89-896186-9f939b-66292f-8a4b53-bf472c-d47d49
 
 [mellow statusline]: https://github.com/adigitoleo/vim-mellow-statusline
 

@@ -5,7 +5,7 @@
 "   |_| |_| |_|\___|_|_|\___/ \_/\_(_)  \_/ |_|_| |_| |_|
 "
 " Maintainer: adigitoleo <adigitoleo@protonmail.com>
-" Version: 0.5
+" Version: 0.6
 " Description: A warm, minimalist colorscheme for (neo)vim
 
 
@@ -69,8 +69,8 @@ if &background ==# 'light'
     hi SpellLocal       guibg=#F2DDBC guifg=#BF472C gui=underline guisp=#D47D49
     hi SpellRare        guibg=#F2DDBC guifg=#A67458 gui=underline guisp=#F5BB89
     hi Statement        guibg=NONE guifg=#AF0032 gui=NONE
-    hi StatusLine       guibg=#8A4B53 guifg=#F5BB89 gui=NONE
-    hi StatusLineNC     guibg=#F5BB89 guifg=#A67458 gui=NONE
+    hi StatusLine       guibg=#8A4B53 guifg=#F5BB89 gui=bold
+    hi StatusLineNC     guibg=#F5BB89 guifg=#A67458 gui=bold
     hi String           guibg=NONE guifg=#573E55 gui=NONE
     hi TabLineFill      guibg=#F5BB89 guifg=#3D241F gui=NONE
     hi Todo             guibg=NONE guifg=#8A7B85 gui=bold
@@ -106,10 +106,10 @@ else
     hi SpellBad         guibg=#0F0809 guifg=#AF0032 gui=underline guisp=#FF7477
     hi SpellCap         guibg=#0F0809 guifg=#D3C1A6 gui=underline guisp=#9F939B
     hi SpellLocal       guibg=#0F0809 guifg=#D47D49 gui=underline guisp=#D47D49
-    hi SpellRare        guibg=#0F0809 guifg=#805B7D gui=underline guisp=#805B7D
+    hi SpellRare        guibg=#0F0809 guifg=#896186 gui=underline guisp=#896186
     hi Statement        guibg=NONE guifg=#BF472C gui=NONE
-    hi StatusLine       guibg=#66292F guifg=#D47D49 gui=NONE
-    hi StatusLineNC     guibg=#3D241F guifg=#8A4B53 gui=NONE
+    hi StatusLine       guibg=#66292F guifg=#D47D49 gui=bold
+    hi StatusLineNC     guibg=#3D241F guifg=#8A4B53 gui=bold
     hi String           guibg=NONE guifg=#D3C1A6 gui=NONE
     hi TabLineFill      guibg=#3D241F guifg=#3D241F gui=NONE
     hi Todo             guibg=NONE guifg=#9F939B gui=bold
@@ -198,7 +198,7 @@ if g:mellow_terminal_colors
             let g:terminal_color_1 = '#AF0032'
             let g:terminal_color_2 = '#577E2A'
             let g:terminal_color_3 = '#BF9169'
-            let g:terminal_color_4 = '#805B7D'
+            let g:terminal_color_4 = '#896186'
             let g:terminal_color_5 = '#66292F'
             let g:terminal_color_6 = '#BF472C'
             let g:terminal_color_7 = '#D3C1A6'
@@ -216,7 +216,7 @@ if g:mellow_terminal_colors
                         \ '#AF0032',
                         \ '#577E2A',
                         \ '#BF9169',
-                        \ '#805B7D',
+                        \ '#896186',
                         \ '#66292F',
                         \ '#BF472C',
                         \ '#D3C1A6',
@@ -278,7 +278,7 @@ if g:mellow_user_colors
         " 8: Red bg with dark fg.
         hi default User8        guibg=#AF0032 guifg=#3D241F gui=bold
         " 9: Dark blue bg with dark fg.
-        hi default User9        guibg=#805B7D guifg=#3D241F gui=bold
+        hi default User9        guibg=#896186 guifg=#3D241F gui=bold
     endif
 endif
 
