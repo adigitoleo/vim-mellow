@@ -5,7 +5,7 @@
 "   |_| |_| |_|\___|_|_|\___/ \_/\_(_)  \_/ |_|_| |_| |_|
 "
 " Maintainer: adigitoleo <adigitoleo@protonmail.com>
-" Version: 0.6
+" Version: 0.7
 " Description: A warm, minimalist colorscheme for (neo)vim
 
 
@@ -108,7 +108,7 @@ else
     hi SpellLocal       guibg=#0F0809 guifg=#D47D49 gui=underline guisp=#D47D49
     hi SpellRare        guibg=#0F0809 guifg=#896186 gui=underline guisp=#896186
     hi Statement        guibg=NONE guifg=#BF472C gui=NONE
-    hi StatusLine       guibg=#66292F guifg=#D47D49 gui=bold
+    hi StatusLine       guibg=#66292F guifg=#F5BB89 gui=bold
     hi StatusLineNC     guibg=#3D241F guifg=#8A4B53 gui=bold
     hi String           guibg=NONE guifg=#D3C1A6 gui=NONE
     hi TabLineFill      guibg=#3D241F guifg=#3D241F gui=NONE
@@ -260,9 +260,9 @@ if g:mellow_user_colors
 
     else
         " 1: StatusLine but boldface.
-        hi default User1        guibg=#66292F guifg=#D47D49 gui=bold
+        hi default User1        guibg=#66292F guifg=#F5BB89 gui=bold
         " 2: StatusLine but with reversed fg<->bg.
-        hi default User2        guibg=#66292F guifg=#D47D49 gui=reverse
+        hi default User2        guibg=#66292F guifg=#F5BB89 gui=reverse
 
         " 3: Pink fg with inherited bg from StatusLine(NC).
         hi default User3        guibg=#66292F guifg=#FF7477 gui=bold
@@ -270,15 +270,15 @@ if g:mellow_user_colors
         hi default User4        guibg=#66292F guifg=#84BF40 gui=bold
 
         " 5: Magenta bg with dark fg.
-        hi default User5        guibg=#8A4B53 guifg=#3D241F gui=bold
+        hi default User5        guibg=#8A4B53 guifg=#F5BB89 gui=bold
         " 6: Dark green bg with dark fg.
-        hi default User6        guibg=#577E2A guifg=#3D241F gui=bold
+        hi default User6        guibg=#577E2A guifg=#F5BB89 gui=bold
         " 7: Orange bg with dark fg.
-        hi default User7        guibg=#D47D49 guifg=#3D241F gui=bold
+        hi default User7        guibg=#BF472C guifg=#F5BB89 gui=bold
         " 8: Red bg with dark fg.
-        hi default User8        guibg=#AF0032 guifg=#3D241F gui=bold
+        hi default User8        guibg=#AF0032 guifg=#F5BB89 gui=bold
         " 9: Dark blue bg with dark fg.
-        hi default User9        guibg=#896186 guifg=#3D241F gui=bold
+        hi default User9        guibg=#896186 guifg=#F5BB89 gui=bold
     endif
 endif
 
