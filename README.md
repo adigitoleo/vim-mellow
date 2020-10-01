@@ -41,9 +41,9 @@ Taken on alacritty with LiberationMono font:
 
 ### Dark mode
 
-![dark-palette](./img/palette_dark_v050.png)
+![dark-palette](./img/palette_dark_v060.png)
 
-![dark-syntax](./img/mellow_dark_v050.png)
+![dark-syntax](./img/mellow_dark_v060.png)
 
 
 ## Installation
