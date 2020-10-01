@@ -86,6 +86,10 @@ Use mellow color palette in the embedded terminal:
 - enabled (`1`) by default if your (neo)vim has the terminal feature
 - `:let g:mellow_terminal_colors = 0` to disable
 
+***Note:** Colors in existing `:terminal` buffers are NOT re-drawn when
+changing the `background` mode (i.e. toggling darkmode). You will need to kill
+and restart any `:terminal`s to see the new colors.*
+
 ### Customization
 
 To make small changes to a colorscheme, use autocommands (see `:help autocmd`).
