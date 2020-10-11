@@ -104,6 +104,7 @@ if &background ==# 'light'
     exe "hi NonText         guibg=".s:colors[7]." guifg=".s:colors[9]." gui=NONE"
     exe "hi Normal          guibg=".s:colors[15]." guifg=".s:colors[0]." gui=NONE"
     exe "hi Pmenu           guibg=".s:colors[7]." guifg=".s:colors[3]." gui=NONE"
+    exe "hi PmenuSbar       guibg=".s:colors[7]." guifg=".s:colors[8]." gui=NONE"
     exe "hi PmenuSel        guibg=".s:colors[11]." guifg=".s:colors[6]." gui=NONE"
     exe "hi PmenuThumb      guibg=".s:colors[13]." guifg=".s:colors[11]." gui=NONE"
     exe "hi Special         guibg=NONE guifg=".s:colors[12]." gui=NONE"
@@ -115,10 +116,9 @@ if &background ==# 'light'
     exe "hi StatusLine      guibg=".s:colors[11]." guifg=".s:colors[13]." gui=bold"
     exe "hi StatusLineNC    guibg=".s:colors[7]." guifg=".s:colors[3]." gui=bold,underline"
     exe "hi String          guibg=NONE guifg=".s:colors[4]." gui=NONE"
-    exe "hi TabLine         guibg=".s:colors[7]." guifg=".s:colors[3]." gui=bold"
-    exe "hi TabLineFill     guibg=".s:colors[7]." guifg=".s:colors[8]." gui=NONE"
     exe "hi Todo            guibg=NONE guifg=".s:colors[12]." gui=bold"
     exe "hi Underlined      guibg=NONE guifg=NONE gui=underline"
+    exe "hi VertSplit       guibg=".s:colors[7]." guifg=".s:colors[3]." gui=bold"
     exe "hi Visual          guibg=".s:colors[11]." guifg=NONE gui=NONE"
     exe "hi WildMenu        guibg=".s:colors[7]." guifg=".s:colors[6]." gui=NONE"
 
@@ -155,10 +155,9 @@ else
     exe "hi StatusLine      guibg=".s:colors[5]." guifg=".s:colors[11]." gui=bold"
     exe "hi StatusLineNC    guibg=".s:colors[8]." guifg=".s:colors[13]." gui=bold,underline"
     exe "hi String          guibg=NONE guifg=".s:colors[7]." gui=NONE"
-    exe "hi TabLine         guibg=".s:colors[8]." guifg=".s:colors[13]." gui=bold"
-    exe "hi TabLineFill     guibg=".s:colors[8]." guifg=".s:colors[8]." gui=NONE"
     exe "hi Todo            guibg=NONE guifg=".s:colors[12]." gui=bold"
     exe "hi Underlined      guibg=NONE guifg=NONE gui=underline"
+    exe "hi VertSplit       guibg=".s:colors[7]." guifg=".s:colors[3]." gui=bold"
     exe "hi Visual          guibg=".s:colors[5]." guifg=NONE gui=NONE"
     exe "hi WildMenu        guibg=".s:colors[8]." guifg=".s:colors[14]." gui=NONE"
 endif
@@ -175,7 +174,6 @@ hi! link FoldColumn EndOfBuffer
 hi! link Folded EndOfBuffer
 hi! link MatchParen PmenuSel
 hi! link Number Constant
-hi! link PmenuSbar TabLineFill
 hi! link PreProc Identifier
 hi! link Question ModeMsg
 hi! link QuickFixLine Underlined
@@ -184,15 +182,16 @@ hi! link SignColumn CursorLine
 hi! link SpecialKey Special
 hi! link StatusLineTerm StatusLine
 hi! link StatusLineTermNC StatusLineNC
+hi! link TabLine StatusLineNC
+hi! link TabLineFill StatusLineNC
 hi! link TabLineSel StatusLine
 hi! link Terminal Normal
 hi! link Title Ignore
 hi! link Type Function
-hi! link VertSplit TabLine
 hi! link VisualNOS Error
 hi! link WarningMsg Error
-hi! link helpLeadBlank TabLine
-hi! link helpNormal TabLine
+hi! link helpLeadBlank StatusLineNC
+hi! link helpNormal StatusLineNC
 
 " Set terminal colors. {{{1
 
