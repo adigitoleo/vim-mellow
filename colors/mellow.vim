@@ -157,7 +157,7 @@ else
     exe "hi String          guibg=NONE guifg=".s:colors[7]." gui=NONE"
     exe "hi Todo            guibg=NONE guifg=".s:colors[12]." gui=bold"
     exe "hi Underlined      guibg=NONE guifg=NONE gui=underline"
-    exe "hi VertSplit       guibg=".s:colors[7]." guifg=".s:colors[3]." gui=bold"
+    exe "hi VertSplit       guibg=".s:colors[8]." guifg=".s:colors[13]." gui=bold"
     exe "hi Visual          guibg=".s:colors[5]." guifg=NONE gui=NONE"
     exe "hi WildMenu        guibg=".s:colors[8]." guifg=".s:colors[14]." gui=NONE"
 endif
