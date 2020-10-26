@@ -5,7 +5,7 @@
 "   |_| |_| |_|\___|_|_|\___/ \_/\_(_)  \_/ |_|_| |_| |_|
 "
 " Maintainer: adigitoleo <adigitoleo@protonmail.com>
-" Version: 0.9
+" Version: 0.9.1
 " Description: A warm, minimalist colorscheme for (neo)vim
 
 
@@ -104,7 +104,6 @@ if &background ==# 'light'
     exe "hi NonText         guibg=".s:colors[7]." guifg=".s:colors[9]." gui=NONE"
     exe "hi Normal          guibg=".s:colors[15]." guifg=".s:colors[0]." gui=NONE"
     exe "hi Pmenu           guibg=".s:colors[7]." guifg=".s:colors[3]." gui=NONE"
-    exe "hi PmenuSbar       guibg=".s:colors[7]." guifg=".s:colors[8]." gui=NONE"
     exe "hi PmenuSel        guibg=".s:colors[11]." guifg=".s:colors[6]." gui=NONE"
     exe "hi PmenuThumb      guibg=".s:colors[13]." guifg=".s:colors[11]." gui=NONE"
     exe "hi Special         guibg=NONE guifg=".s:colors[12]." gui=NONE"
@@ -174,6 +173,7 @@ hi! link FoldColumn EndOfBuffer
 hi! link Folded EndOfBuffer
 hi! link MatchParen PmenuSel
 hi! link Number Constant
+hi! link PmenuSbar Pmenu
 hi! link PreProc Identifier
 hi! link Question ModeMsg
 hi! link QuickFixLine Underlined
