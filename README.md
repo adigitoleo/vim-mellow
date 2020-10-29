@@ -37,13 +37,13 @@ Taken on alacritty with LiberationMono font:
 
 ![light-palette](./img/palette_light.png)
 
-![light-example](./img/A_mellow_light.png)
+![light-example](./img/mellow_light.png)
 
 ### Dark mode
 
 ![dark-palette](./img/palette_dark.png)
 
-![dark-example](./img/B_mellow_dark.png)
+![dark-example](./img/mellow_dark.png)
 
 
 ## Installation
