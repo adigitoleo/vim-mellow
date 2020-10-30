@@ -89,10 +89,9 @@ if &background ==# 'light'
     exe "hi CursorLine      guibg=".s:colors[7]." guifg=NONE gui=NONE"
     exe "hi CursorLineNr    guibg=".s:colors[7]." guifg=".s:colors[6]." gui=bold"
     exe "hi DiffAdd         guibg=".s:colors[10]." guifg=NONE gui=NONE"
-    exe "hi DiffDelete      guibg=".s:colors[9]." guifg=NONE gui=NONE"
-    exe "hi Directory       guibg=NONE guifg=".s:colors[6]." gui=NONE"
+    exe "hi DiffChange      guibg=NONE guifg=".s:colors[6]." gui=NONE"
+    exe "hi DiffDelete      guibg=NONE guifg=".s:colors[9]." gui=bold"
     exe "hi EndOfBuffer     guibg=".s:colors[7]." guifg=".s:colors[12]." gui=NONE"
-    exe "hi Error           guibg=".s:colors[9]." guifg=".s:colors[0]." gui=NONE"
     exe "hi ErrorMsg        guibg=".s:colors[1]." guifg=".s:colors[15]." gui=NONE"
     exe "hi Function        guibg=NONE guifg=".s:colors[5]." gui=NONE"
     exe "hi Identifier      guibg=NONE guifg=".s:colors[13]." gui=NONE"
@@ -128,10 +127,9 @@ else
     exe "hi CursorLine      guibg=".s:colors[8]." guifg=NONE gui=NONE"
     exe "hi CursorLineNr    guibg=".s:colors[8]." guifg=".s:colors[14]." gui=bold"
     exe "hi DiffAdd         guibg=".s:colors[2]." guifg=NONE gui=NONE"
-    exe "hi DiffDelete      guibg=NONE guifg=".s:colors[9]." gui=NONE"
-    exe "hi Directory       guibg=NONE guifg=".s:colors[14]." gui=NONE"
+    exe "hi DiffChange      guibg=NONE guifg=".s:colors[14]." gui=NONE"
+    exe "hi DiffDelete      guibg=NONE guifg=".s:colors[9]." gui=bold"
     exe "hi EndOfBuffer     guibg=".s:colors[8]." guifg=".s:colors[12]." gui=NONE"
-    exe "hi Error           guibg=NONE guifg=".s:colors[9]." gui=NONE"
     exe "hi ErrorMsg        guibg=".s:colors[1]." guifg=".s:colors[15]." gui=NONE"
     exe "hi Function        guibg=NONE guifg=".s:colors[3]." gui=NONE"
     exe "hi Identifier      guibg=NONE guifg=".s:colors[11]." gui=NONE"
@@ -164,11 +162,12 @@ endif
 " Set linked groups. {{{1
 
 hi! link ColorColumn CursorLine
+hi! link Error DiffDelete
 hi! link Conceal Special
 hi! link CursorColumn CursorLine
 hi! link CursorIM Cursor
-hi! link DiffChange CursorLine
 hi! link DiffText Visual
+hi! link Directory DiffChange
 hi! link FoldColumn EndOfBuffer
 hi! link Folded EndOfBuffer
 hi! link MatchParen PmenuSel
