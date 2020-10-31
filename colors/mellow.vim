@@ -5,21 +5,13 @@
 "   |_| |_| |_|\___|_|_|\___/ \_/\_(_)  \_/ |_|_| |_| |_|
 "
 " Maintainer: adigitoleo <adigitoleo@protonmail.com>
-" Version: 0.9.1
+" Version: 1.0.0
 " Description: A warm, minimalist colorscheme for (neo)vim
 
 
 let s:script_name = expand("<sfile>:t:r")
 
-" Check requirements. {{{1
-
-if !has("termguicolors") && !has("gui_running")
-    throw "RGB colors unavailable"
-elseif !&termguicolors
-    throw "RGB colors are not enabled, see :h 'termguicolors'"
-endif
-
-" Initialize and set options. {{{1
+" Clear highlights and set options. {{{1
 
 hi clear
 
@@ -32,10 +24,10 @@ endif
 let g:colors_name = s:script_name
 
 " By default, DO define colors for :terminal.
-let s:opt_terminal_colors = get(g:, s:script_name . "_terminal_colors", 1)
+let s:opt_terminal_colors = get(g:, s:script_name .. "_terminal_colors", 1)
 
 " By default, DO NOT define User1-9 colors for statusline.
-let s:opt_user_colors = get(g:, s:script_name . "_user_colors", 0)
+let s:opt_user_colors = get(g:, s:script_name .. "_user_colors", 0)
 
 " Define color palette. {{{1
 
@@ -58,6 +50,11 @@ if &background ==# 'light'
                 \ '#D47D49',
                 \ '#F2DDBC',
                 \ ]
+    " xterm-256 conversions: https://codegolf.stackexchange.com/a/156985
+    let s:colors256 = [
+                \ 232, 125, 58, 137, 240, 236, 130, 187,
+                \ 235, 210, 107, 216, 102, 95, 173, 223
+                \ ]
 
 else  " Dark mode.
     let s:colors = [
@@ -78,85 +75,123 @@ else  " Dark mode.
                 \ '#D47D49',
                 \ '#ECCD9D',
                 \ ]
+    " xterm-256 conversions: https://codegolf.stackexchange.com/a/156985
+    let s:colors256 = [
+                \ 232, 125, 64, 137, 96, 236, 130, 181,
+                \ 235, 210, 107, 216, 247, 95, 173, 223
+                \ ]
 endif
+
+" Define highlight setter function. {{{1
+
+function! s:hi(group, bg, fg, ...) abort
+    " Parse bg and fg strings, e.g. 'NONE', or integers in the range [0,15].
+    let l:guibg = type(a:bg) == type('') ? a:bg : s:colors[a:bg]
+    let l:guifg = type(a:fg) == type('') ? a:fg : s:colors[a:fg]
+    " Set cterm (xterm-256) fallback colors.
+    let l:ctermbg = type(a:bg) == type('') ? a:bg : s:colors256[a:bg]
+    let l:ctermfg = type(a:fg) == type('') ? a:fg : s:colors256[a:fg]
+
+    let l:colors = printf(
+                \ "hi %s ctermbg=%s guibg=%s ctermfg=%s guifg=%s",
+                \ a:group, l:ctermbg, l:guibg, l:ctermfg, l:guifg
+                \)
+
+    " By default, set special attributes to 'NONE'.
+    let l:options = 'NONE'
+
+    for l:opt in a:000
+        if type(l:opt) == type('')
+            " Parse special attribute string.
+            let l:options = l:opt
+        elseif type(l:opt) == type(0)
+            " Parse guisp color integer in the range [0,15].
+            let l:colors .= printf(" guisp=%s", s:colors[l:opt])
+        endif
+    endfor
+
+    return printf("%s cterm=%s gui=%s", l:colors, l:options, l:options)
+endfunction
 
 " Set main colors. {{{1
 
 if &background ==# 'light'
-    exe "hi Comment         guibg=NONE guifg=".s:colors[14]." gui=NONE"
-    exe "hi Constant        guibg=NONE guifg=".s:colors[0]." gui=NONE"
-    exe "hi Cursor          guibg=".s:colors[0]." guifg=".s:colors[15]." gui=NONE"
-    exe "hi CursorLine      guibg=".s:colors[7]." guifg=NONE gui=NONE"
-    exe "hi CursorLineNr    guibg=".s:colors[7]." guifg=".s:colors[6]." gui=bold"
-    exe "hi DiffAdd         guibg=".s:colors[10]." guifg=NONE gui=NONE"
-    exe "hi DiffChange      guibg=NONE guifg=".s:colors[6]." gui=NONE"
-    exe "hi DiffDelete      guibg=NONE guifg=".s:colors[9]." gui=bold"
-    exe "hi EndOfBuffer     guibg=".s:colors[7]." guifg=".s:colors[12]." gui=NONE"
-    exe "hi ErrorMsg        guibg=".s:colors[1]." guifg=".s:colors[15]." gui=NONE"
-    exe "hi Function        guibg=NONE guifg=".s:colors[5]." gui=NONE"
-    exe "hi Identifier      guibg=NONE guifg=".s:colors[13]." gui=NONE"
-    exe "hi Ignore          guibg=NONE guifg=NONE gui=NONE"
-    exe "hi IncSearch       guibg=".s:colors[11]." guifg=".s:colors[0]." gui=NONE"
-    exe "hi LineNr          guibg=".s:colors[7]." guifg=".s:colors[14]." gui=NONE"
-    exe "hi ModeMsg         guibg=NONE guifg=".s:colors[6]." gui=bold"
-    exe "hi MoreMsg         guibg=NONE guifg=".s:colors[3]." gui=bold"
-    exe "hi NonText         guibg=".s:colors[7]." guifg=".s:colors[9]." gui=NONE"
-    exe "hi Normal          guibg=".s:colors[15]." guifg=".s:colors[0]." gui=NONE"
-    exe "hi Pmenu           guibg=".s:colors[7]." guifg=".s:colors[3]." gui=NONE"
-    exe "hi PmenuSel        guibg=".s:colors[11]." guifg=".s:colors[6]." gui=NONE"
-    exe "hi PmenuThumb      guibg=".s:colors[13]." guifg=".s:colors[11]." gui=NONE"
-    exe "hi Special         guibg=NONE guifg=".s:colors[12]." gui=NONE"
-    exe "hi SpellBad        guibg=".s:colors[15]." guifg=".s:colors[1]." gui=underline guisp=".s:colors[9]
-    exe "hi SpellCap        guibg=".s:colors[15]." guifg=".s:colors[4]." gui=underline guisp=".s:colors[12]
-    exe "hi SpellLocal      guibg=".s:colors[15]." guifg=".s:colors[6]." gui=underline guisp=".s:colors[14]
-    exe "hi SpellRare       guibg=".s:colors[15]." guifg=".s:colors[3]." gui=underline guisp=".s:colors[11]
-    exe "hi Statement       guibg=NONE guifg=".s:colors[1]." gui=NONE"
-    exe "hi StatusLine      guibg=".s:colors[11]." guifg=".s:colors[13]." gui=bold"
-    exe "hi StatusLineNC    guibg=".s:colors[7]." guifg=".s:colors[3]." gui=bold,underline"
-    exe "hi String          guibg=NONE guifg=".s:colors[4]." gui=NONE"
-    exe "hi Todo            guibg=NONE guifg=".s:colors[12]." gui=bold"
-    exe "hi Underlined      guibg=NONE guifg=NONE gui=underline"
-    exe "hi VertSplit       guibg=".s:colors[7]." guifg=".s:colors[3]." gui=bold"
-    exe "hi Visual          guibg=".s:colors[11]." guifg=NONE gui=NONE"
-    exe "hi WildMenu        guibg=".s:colors[7]." guifg=".s:colors[6]." gui=NONE"
+    " -------- group ------------ bg--------- fg ------- special -------
+    exe s:hi('Comment',         'NONE',     14)
+    exe s:hi('Constant',        'NONE',     0)
+    exe s:hi('Cursor',          0,          15)
+    exe s:hi('CursorLine',      7,          'NONE')
+    exe s:hi('CursorLineNr',    7,          6,          'bold')
+    exe s:hi('DiffAdd',         10,         'NONE')
+    exe s:hi('DiffChange',      'NONE',     6)
+    exe s:hi('DiffDelete',      'NONE',     9,          'bold')
+    exe s:hi('EndOfBuffer',     7,          12)
+    exe s:hi('ErrorMsg',        1,          15)
+    exe s:hi('Function',        'NONE',     5)
+    exe s:hi('Identifier',      'NONE',     13)
+    exe s:hi('Ignore',          'NONE',     'NONE')
+    exe s:hi('IncSearch',       11,         0)
+    exe s:hi('LineNr',          7,          14)
+    exe s:hi('ModeMsg',         'NONE',     6,          'bold')
+    exe s:hi('MoreMsg',         'NONE',     3,          'bold')
+    exe s:hi('NonText',         7,          9)
+    exe s:hi('Normal',          15,         0)
+    exe s:hi('Pmenu',           7,          3)
+    exe s:hi('PmenuSel',        11,         6)
+    exe s:hi('PmenuThumb',      13,         11)
+    exe s:hi('Special',         'NONE',     12)
+    exe s:hi('SpellBad',        15,         1,          'underline', 9)
+    exe s:hi('SpellCap',        15,         4,          'underline', 12)
+    exe s:hi('SpellLocal',      15,         6,          'underline', 14)
+    exe s:hi('SpellRare',       15,         3,          'underline', 11)
+    exe s:hi('Statement',       'NONE',     1)
+    exe s:hi('StatusLine',      11,         13,         'bold')
+    exe s:hi('StatusLineNC',    7,          3,          'bold,underline')
+    exe s:hi('String',          'NONE',     4)
+    exe s:hi('Todo',            'NONE',     12,         'bold')
+    exe s:hi('Underlined',      'NONE',     'NONE',     'underline')
+    exe s:hi('VertSplit',       7,          3,          'bold')
+    exe s:hi('Visual',          11,         'NONE')
+    exe s:hi('WildMenu',        7,          6)
 
 else
-    exe "hi Comment         guibg=NONE guifg=".s:colors[13]." gui=NONE"
-    exe "hi Constant        guibg=NONE guifg=".s:colors[15]." gui=NONE"
-    exe "hi Cursor          guibg=".s:colors[7]." guifg=".s:colors[0]." gui=NONE"
-    exe "hi CursorLine      guibg=".s:colors[8]." guifg=NONE gui=NONE"
-    exe "hi CursorLineNr    guibg=".s:colors[8]." guifg=".s:colors[14]." gui=bold"
-    exe "hi DiffAdd         guibg=".s:colors[2]." guifg=NONE gui=NONE"
-    exe "hi DiffChange      guibg=NONE guifg=".s:colors[14]." gui=NONE"
-    exe "hi DiffDelete      guibg=NONE guifg=".s:colors[9]." gui=bold"
-    exe "hi EndOfBuffer     guibg=".s:colors[8]." guifg=".s:colors[12]." gui=NONE"
-    exe "hi ErrorMsg        guibg=".s:colors[1]." guifg=".s:colors[15]." gui=NONE"
-    exe "hi Function        guibg=NONE guifg=".s:colors[3]." gui=NONE"
-    exe "hi Identifier      guibg=NONE guifg=".s:colors[11]." gui=NONE"
-    exe "hi Ignore          guibg=NONE guifg=NONE gui=NONE"
-    exe "hi IncSearch       guibg=".s:colors[5]." guifg=".s:colors[15]." gui=NONE"
-    exe "hi LineNr          guibg=".s:colors[8]." guifg=".s:colors[13]." gui=NONE"
-    exe "hi ModeMsg         guibg=NONE guifg=".s:colors[14]." gui=bold"
-    exe "hi MoreMsg         guibg=NONE guifg=".s:colors[3]." gui=bold"
-    exe "hi NonText         guibg=".s:colors[8]." guifg=".s:colors[9]." gui=NONE"
-    exe "hi Normal          guibg=".s:colors[0]." guifg=".s:colors[15]." gui=NONE"
-    exe "hi Pmenu           guibg=".s:colors[8]." guifg=".s:colors[13]." gui=NONE"
-    exe "hi PmenuSel        guibg=".s:colors[5]." guifg=".s:colors[9]." gui=NONE"
-    exe "hi PmenuThumb      guibg=".s:colors[13]." guifg=".s:colors[5]." gui=NONE"
-    exe "hi Special         guibg=NONE guifg=".s:colors[12]." gui=NONE"
-    exe "hi SpellBad        guibg=".s:colors[0]." guifg=".s:colors[1]." gui=underline guisp=".s:colors[9]
-    exe "hi SpellCap        guibg=".s:colors[0]." guifg=".s:colors[7]." gui=underline guisp=".s:colors[12]
-    exe "hi SpellLocal      guibg=".s:colors[0]." guifg=".s:colors[14]." gui=underline guisp=".s:colors[14]
-    exe "hi SpellRare       guibg=".s:colors[0]." guifg=".s:colors[4]." gui=underline guisp=".s:colors[4]
-    exe "hi Statement       guibg=NONE guifg=".s:colors[6]." gui=NONE"
-    exe "hi StatusLine      guibg=".s:colors[5]." guifg=".s:colors[11]." gui=bold"
-    exe "hi StatusLineNC    guibg=".s:colors[8]." guifg=".s:colors[13]." gui=bold,underline"
-    exe "hi String          guibg=NONE guifg=".s:colors[7]." gui=NONE"
-    exe "hi Todo            guibg=NONE guifg=".s:colors[12]." gui=bold"
-    exe "hi Underlined      guibg=NONE guifg=NONE gui=underline"
-    exe "hi VertSplit       guibg=".s:colors[8]." guifg=".s:colors[13]." gui=bold"
-    exe "hi Visual          guibg=".s:colors[5]." guifg=NONE gui=NONE"
-    exe "hi WildMenu        guibg=".s:colors[8]." guifg=".s:colors[14]." gui=NONE"
+    " -------- group ------------ bg--------- fg ------- special -------
+    exe s:hi('Comment',         'NONE',     13)
+    exe s:hi('Constant',        'NONE',     15)
+    exe s:hi('Cursor',          7,          0)
+    exe s:hi('CursorLine',      8,          'NONE')
+    exe s:hi('CursorLineNr',    8,          14,         'bold')
+    exe s:hi('DiffAdd',         2,          'NONE')
+    exe s:hi('DiffChange',      'NONE',     14)
+    exe s:hi('DiffDelete',      'NONE',     9,          'bold')
+    exe s:hi('EndOfBuffer',     8,          12)
+    exe s:hi('ErrorMsg',        1,          15)
+    exe s:hi('Function',        'NONE',     3)
+    exe s:hi('Identifier',      'NONE',     11)
+    exe s:hi('Ignore',          'NONE',     'NONE')
+    exe s:hi('IncSearch',       5,          15)
+    exe s:hi('LineNr',          8,          13)
+    exe s:hi('ModeMsg',         'NONE',     14,         'bold')
+    exe s:hi('MoreMsg',         'NONE',     3,          'bold')
+    exe s:hi('NonText',         8,          9)
+    exe s:hi('Normal',          0,          15)
+    exe s:hi('Pmenu',           8,          13)
+    exe s:hi('PmenuSel',        5,          9)
+    exe s:hi('PmenuThumb',      13,         5)
+    exe s:hi('Special',         'NONE',     12)
+    exe s:hi('SpellBad',        0,          1,          'underline', 9)
+    exe s:hi('SpellCap',        0,          7,          'underline', 12)
+    exe s:hi('SpellLocal',      0,          14,         'underline', 14)
+    exe s:hi('SpellRare',       0,          4,          'underline', 4)
+    exe s:hi('Statement',       'NONE',     6)
+    exe s:hi('StatusLine',      5,          11,         'bold')
+    exe s:hi('StatusLineNC',    8,          13,         'bold,underline')
+    exe s:hi('String',          'NONE',     7)
+    exe s:hi('Todo',            'NONE',     12,         'bold')
+    exe s:hi('Underlined',      'NONE',     'NONE',     'underline')
+    exe s:hi('VertSplit',       8,          13,         'bold')
+    exe s:hi('Visual',          5,          'NONE')
+    exe s:hi('WildMenu',        8,          14)
 endif
 
 " Set linked groups. {{{1
@@ -197,7 +232,7 @@ hi! link helpNormal StatusLineNC
 if s:opt_terminal_colors
     if has("nvim")
         for idx in range(16)
-            call nvim_set_var("terminal_color_" . idx, s:colors[idx])
+            call nvim_set_var("terminal_color_" .. idx, s:colors[idx])
         endfor
     elseif has("terminal")
         let g:terminal_ansi_colors = s:colors
@@ -209,31 +244,33 @@ endif
 if s:opt_user_colors
     if &background ==# 'light'
         " Colors for statusline diagnostics: red (1) and green (2).
-        exe "hi default User1 guibg=".s:colors[11]." guifg=".s:colors[1]." gui=bold"
-        exe "hi default User2 guibg=".s:colors[11]." guifg=".s:colors[2]." gui=bold"
+        exe s:hi('default User1',   11, 1,  'bold')
+        exe s:hi('default User2',   11, 2,  'bold')
         " Subtle colors for miscellaneous indicators: sand (3) and orange (4).
-        exe "hi default User3 guibg=".s:colors[11]." guifg=".s:colors[13]
-        exe "hi default User4 guibg=".s:colors[11]." guifg=".s:colors[14]
-        " Inverse colors for mode indicators: cordovan (5), green (6), orange (7), red (8) and blue (9)
-        exe "hi default User5 guibg=".s:colors[13]." guifg=".s:colors[11]." gui=bold"
-        exe "hi default User6 guibg=".s:colors[2]." guifg=".s:colors[11]." gui=bold"
-        exe "hi default User7 guibg=".s:colors[14]." guifg=".s:colors[11]." gui=bold"
-        exe "hi default User8 guibg=".s:colors[1]." guifg=".s:colors[11]." gui=bold"
-        exe "hi default User9 guibg=".s:colors[4]." guifg=".s:colors[11]." gui=bold"
+        exe s:hi('default User3',   11, 13)
+        exe s:hi('default User4',   11, 14)
+        " Inverse colors for mode indicators:
+        " cordovan (5), green (6), orange (7), red (8) and blue (9)
+        exe s:hi('default User5',   13, 11, 'bold')
+        exe s:hi('default User6',   2,  11, 'bold')
+        exe s:hi('default User7',   14, 11, 'bold')
+        exe s:hi('default User8',   1,  11, 'bold')
+        exe s:hi('default User9',   4,  11, 'bold')
 
     else
         " Colors for statusline diagnostics: red (1) and green (2).
-        exe "hi default User1 guibg=".s:colors[5]." guifg=".s:colors[9]." gui=bold"
-        exe "hi default User2 guibg=".s:colors[5]." guifg=".s:colors[10]." gui=bold"
+        exe s:hi('default User1',   5,  9,  'bold')
+        exe s:hi('default User2',   5,  10, 'bold')
         " Subtle colors for miscellaneous indicators: sand (3) and orange (4).
-        exe "hi default User3 guibg=".s:colors[5]." guifg=".s:colors[13]
-        exe "hi default User4 guibg=".s:colors[5]." guifg=".s:colors[14]
-        " Inverse colors for mode indicators: cordovan (5), green (6), orange (7), red (8) and blue (9)
-        exe "hi default User5 guibg=".s:colors[13]." guifg=".s:colors[11]." gui=bold"
-        exe "hi default User6 guibg=".s:colors[2]." guifg=".s:colors[11]." gui=bold"
-        exe "hi default User7 guibg=".s:colors[6]." guifg=".s:colors[11]." gui=bold"
-        exe "hi default User8 guibg=".s:colors[1]." guifg=".s:colors[11]." gui=bold"
-        exe "hi default User9 guibg=".s:colors[4]." guifg=".s:colors[11]." gui=bold"
+        exe s:hi('default User3',   5,  13)
+        exe s:hi('default User4',   5,  14)
+        " Inverse colors for mode indicators:
+        " cordovan (5), green (6), orange (7), red (8) and blue (9)
+        exe s:hi('default User5',   13, 11, 'bold')
+        exe s:hi('default User6',   2,  11, 'bold')
+        exe s:hi('default User7',   6,  11, 'bold')
+        exe s:hi('default User8',   1,  11, 'bold')
+        exe s:hi('default User9',   4,  11, 'bold')
     endif
 endif
 

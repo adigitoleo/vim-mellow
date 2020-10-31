@@ -1,18 +1,15 @@
 # Mellow
 
+
 ### A warm, minimalist colorscheme for (neo)vim
 
 `Plug 'adigitoleo/vim-mellow'`
 
-**Note for terminal users:** This theme requires 24-bit RGB color support. If
-your terminal is [compatible], enable RGB colors via `:set termguicolors`
-
-
 <!-- vim-markdown-toc GFM -->
 
 * [Screenshots](#screenshots)
-* [Light mode](#light-mode)
-* [Dark mode](#dark-mode)
+* [Light theme](#light-theme)
+* [Dark theme](#dark-theme)
 * [Installation](#installation)
 * [Usage](#usage)
 * [Options](#options)
@@ -33,13 +30,14 @@ Taken on alacritty with LiberationMono font:
 
 *Do you want a statusline as well? Try the [mellow statusline]!*
 
-### Light mode
+
+### Light theme
 
 ![light-palette](./img/palette_light.png)
 
 ![light-example](./img/mellow_light.png)
 
-### Dark mode
+### Dark theme
 
 ![dark-palette](./img/palette_dark.png)
 
@@ -66,7 +64,8 @@ folder inside:
 *To apply commands at startup, add them to the end of your configuration file
 (see `:help vimrc`).*
 
-You can omit the `termguicolors` part if you are running (neo)vim in a GUI:
+You can omit the `termguicolors` part if you are running (neo)vim in a GUI, or
+if you have set `g:mellow_cterm_ansi = 1`.
 
 ```vim
 :set termguicolors
@@ -76,19 +75,32 @@ You can omit the `termguicolors` part if you are running (neo)vim in a GUI:
 The colorscheme works for both `background=light` and `background=dark`
 according to the screenshots above. See `:help 'background'`.
 
-If it doesn't look right, it probably isn't. If you're sure you are running in
-a [compatible] terminal, read `:help 'termguicolors'` and `:help
-xterm-true-color` before opening an issue.
+If it doesn't look right, you might not have a truecolor [compatible] terminal.
+It might be worth reading `:help 'termguicolors'` and `:help xterm-true-color`
+before opening an issue.
+
 
 ### Options
 
-Use mellow color palette in the embedded terminal:
+**Use Mellow color palette in the embedded terminal:**
 - enabled (`1`) by default if your (neo)vim has the terminal feature
 - `:let g:mellow_terminal_colors = 0` to disable
 
-***Note:** Colors in existing `:terminal` buffers are NOT re-drawn when
-changing the `background` mode (i.e. toggling darkmode). You will need to kill
-and restart any `:terminal`s to see the new colors.*
+*NOTE: Colors in existing `:terminal` buffers are NOT re-drawn when
+changing `set background`. You will need to kill and restart any `:terminal`s
+to see the new colors.*
+
+**Define optional `User1..9` groups using Mellow colors:**
+- disabled (`0`) by default
+- `:let g:mellow_user_colors = 1` to enable
+
+**Use the first 16 terminal colors as the `cterm{bg,fg}` fallback colors:**
+- `:let g:mellow_cterm_ansi = 1` to enable
+- uses [16,256] color codes for the fallback colors by default (`0`)
+
+*NOTE: The default fallback colorschemes are rudimentary and intended for
+debugging purposes only.*
+
 
 ### Customization
 
@@ -113,19 +125,20 @@ augroup ale_highlights
 augroup END
 ```
 
+
 ## Miscellaneous
 
 This theme was first motivated by a lack of `bg=light` option in [vim-farout],
 which uses a similar minimalist set of warm red and yellow colors. I wanted a
 light theme with moderate contrast and warm colors, that didn't make me want to
-change every single syntax file. To me, mellow lies mid-way between `:syntax
+change every single syntax file. To me, Mellow lies mid-way between `:syntax
 off` and popular themes like [solarized] or [gruvbox].
 
 And that's just the way I like it :)
 
 Since the theme uses only 16 colors, you can use the same colors in your
 terminal of choice. Check the [wiki] for an example Alacritty theme, as well as
-experimental mellow colorschemes for some other Linux stuff.
+experimental Mellow colorschemes for some other Linux stuff.
 
 Some more links, for your convenience:
 - [RGB mellow palette (bg=light)]
