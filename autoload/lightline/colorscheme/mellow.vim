@@ -1,55 +1,44 @@
-" =============================================================================
-" Filename: autoload/lightline/colorscheme/selenized_light.vim
-" Author: itchyny
-" License: MIT License
-" Last Change: 2020/05/02 16:58:00.
-" =============================================================================
 
-" https://github.com/jan-warchol/selenized/blob/master/the-values.md#selenized-light
-" https://github.com/jan-warchol/selenized/blob/master/manual-installation.md
-let s:fg_0      = ['#53676d', 0]
-let s:bg_1      = ['#e9e4d0', 0]
-let s:bg_2      = ['#cfcebe', 8]
-let s:dim_0     = ['#909995', 7]
-let s:red       = ['#d2212d', 1]
-let s:green     = ['#489100', 2]
-let s:yellow    = ['#ad8900', 3]
-let s:blue      = ['#0072d4', 4]
-let s:magenta   = ['#ca4898', 5]
-let s:cyan      = ['#009c8f', 6]
-let s:brred     = ['#cc1729', 9]
-let s:brgreen   = ['#428b00', 10]
-let s:bryellow  = ['#a78300', 11]
-let s:brblue    = ['#006dce', 12]
-let s:brmagenta = ['#c44392', 13]
-let s:brcyan    = ['#00978a', 14]
-
-let s:misc1 = airline#themes#get_highlight('User3')
-let s:misc2 = airline#themes#get_highlight('User4')
+let s:black     = ['#0F0908', 0]
+let s:red       = ['#AF0032', 1]
+let s:green     = ['#4C6E25', 2]
+let s:yellow    = ['#A67458', 3]
+let s:blue      = ['#573E55', 4]
+let s:magenta   = ['#66292F', 5]
+let s:cyan      = ['#BF472C', 6]
+let s:white     = ['#E0CCAE', 7]
+let s:brblack   = ['#3D241F', 8]
+let s:brred     = ['#FF7477', 9]
+let s:brgreen   = ['#84BF40', 10]
+let s:bryellow  = ['#F5BB89', 11]
+let s:brblue    = ['#8A7B85', 12]
+let s:brmagenta = ['#8A4B53', 13]
+let s:brcyan    = ['#D47D49', 14]
+let s:brwhite   = ['#F2DDBC', 15]
 
 let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
 
-let s:p.normal.right = [[ s:bg_1, s:blue ], [ s:bg_1, s:dim_0 ], [ s:fg_0, s:bg_1 ]]
-let s:p.normal.left = [[ s:bg_1, s:blue ], [ s:bg_1, s:dim_0 ]]
-" let s:p.normal.middle = [[ s:dim_0, s:bg_1 ]]
-let s:p.normal.middle = [[ s:misc1 ]]
-let s:p.normal.error = [[ s:bg_1, s:red ]]
-let s:p.normal.warning = [[ s:bg_1, s:yellow ]]
+let s:p.normal.left = [[ s:bryellow, s:brmagenta ], [ s:brmagenta, s:bryellow ]]
+let s:p.normal.right = [[ s:bryellow, s:brmagenta ], [ s:bryellow, s:blue ], [ s:brmagenta, s:bryellow ]]
+let s:p.normal.middle = [[ s:brmagenta, s:bryellow ]]
+let s:p.normal.error = [[ s:bryellow, s:red ]]
+let s:p.normal.warning = [[ s:bryellow, s:yellow ]]
 
-let s:p.insert.right = [[ s:bg_1, s:green ], [ s:bg_1, s:dim_0 ], [ s:fg_0, s:bg_1 ]]
-let s:p.insert.left = [[ s:bg_1, s:green ], [ s:bg_1, s:dim_0 ]]
+let s:p.insert.left = [[ s:bryellow, s:green ], [ s:brmagenta, s:bryellow ]]
+let s:p.insert.right = [[ s:bryellow, s:green ], [ s:bryellow, s:blue ], [ s:brmagenta, s:bryellow ]]
 
-let s:p.visual.right = [[ s:bg_1, s:magenta ], [ s:bg_1, s:dim_0 ], [ s:fg_0, s:bg_1 ]]
-let s:p.visual.left = [[ s:bg_1, s:magenta ], [ s:bg_1, s:dim_0 ]]
+let s:p.visual.left = [[ s:bryellow, s:brcyan ], [ s:brmagenta, s:bryellow ]]
+let s:p.visual.right = [[ s:bryellow, s:brcyan ], [ s:bryellow, s:blue ], [ s:brmagenta, s:bryellow ]]
 
-let s:p.inactive.right = [[ s:bg_1, s:dim_0 ], [ s:fg_0, s:bg_1 ]]
-let s:p.inactive.left = [[ s:dim_0, s:bg_1 ], [ s:bg_1, s:dim_0 ]]
+let s:p.inactive.left = [[ s:brmagenta, s:white ], [ s:brmagenta, s:white ]]
+let s:p.inactive.middle = [[ s:brmagenta, s:white ], [ s:brmagenta, s:white ]]
+let s:p.inactive.right = [[ s:brmagenta, s:white  ], [ s:brmagenta, s:white ]]
 
-let s:p.replace.right = [[ s:bg_1, s:red ], [ s:bg_1, s:dim_0 ], [ s:fg_0, s:bg_1 ]]
-let s:p.replace.left = [[ s:bg_1, s:red ], [ s:bg_1, s:dim_0 ]]
+let s:p.replace.left = [[ s:bryellow, s:red ], [ s:brmagenta, s:bryellow ]]
+let s:p.replace.right = [[ s:bryellow, s:red ], [ s:bryellow, s:blue ], [ s:brmagenta, s:bryellow ]]
 
-let s:p.tabline.right = [[ s:bg_1, s:red ]]
-let s:p.tabline.left = [[ s:bg_1, s:dim_0 ]]
-let s:p.tabline.tabsel = [[ s:bg_1, s:blue ]]
+let s:p.tabline.left = [[ s:bryellow, s:brmagenta ]]
+let s:p.tabline.right = [[ s:bryellow, s:red ]]
+let s:p.tabline.tabsel = [[ s:bryellow, s:blue ]]
 
 let g:lightline#colorscheme#mellow#palette = lightline#colorscheme#flatten(s:p)
