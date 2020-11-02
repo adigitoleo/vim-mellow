@@ -5,7 +5,7 @@
 "   |_| |_| |_|\___|_|_|\___/ \_/\_(_)  \_/ |_|_| |_| |_|
 "
 " Maintainer: adigitoleo <adigitoleo@protonmail.com>
-" Version: 1.0.0
+" Version: 1.1.0
 " Description: A warm, minimalist colorscheme for (neo)vim
 
 
@@ -29,6 +29,9 @@ let s:opt_terminal_colors = get(g:, s:script_name .. "_terminal_colors", 1)
 " By default, DO NOT define User1-9 colors for statusline.
 let s:opt_user_colors = get(g:, s:script_name .. "_user_colors", 0)
 
+" By default, DO NOT use ANSI colors as a fallback (uses 256 colors instead).
+let s:opt_cterm_ansi = get(g:, s:script_name .. "_cterm_ansi", 0)
+
 " Define color palette. {{{1
 
 if &background ==# 'light'
@@ -51,7 +54,7 @@ if &background ==# 'light'
                 \ '#F2DDBC',
                 \ ]
     " xterm-256 conversions: https://codegolf.stackexchange.com/a/156985
-    let s:colors256 = [
+    let s:colors_fallback = s:opt_cterm_ansi ? range(16) : [
                 \ 232, 125, 58, 137, 240, 236, 130, 187,
                 \ 235, 210, 107, 216, 102, 95, 173, 223
                 \ ]
@@ -76,7 +79,7 @@ else  " Dark mode.
                 \ '#ECCD9D',
                 \ ]
     " xterm-256 conversions: https://codegolf.stackexchange.com/a/156985
-    let s:colors256 = [
+    let s:colors_fallback = s:opt_cterm_ansi ? range(16) : [
                 \ 232, 125, 64, 137, 96, 236, 130, 181,
                 \ 235, 210, 107, 216, 247, 95, 173, 223
                 \ ]
@@ -88,9 +91,9 @@ function! s:hi(group, bg, fg, ...) abort
     " Parse bg and fg strings, e.g. 'NONE', or integers in the range [0,15].
     let l:guibg = type(a:bg) == type('') ? a:bg : s:colors[a:bg]
     let l:guifg = type(a:fg) == type('') ? a:fg : s:colors[a:fg]
-    " Set cterm (xterm-256) fallback colors.
-    let l:ctermbg = type(a:bg) == type('') ? a:bg : s:colors256[a:bg]
-    let l:ctermfg = type(a:fg) == type('') ? a:fg : s:colors256[a:fg]
+    " Set cterm fallback colors.
+    let l:ctermbg = type(a:bg) == type('') ? a:bg : s:colors_fallback[a:bg]
+    let l:ctermfg = type(a:fg) == type('') ? a:fg : s:colors_fallback[a:fg]
 
     let l:colors = printf(
                 \ "hi %s ctermbg=%s guibg=%s ctermfg=%s guifg=%s",

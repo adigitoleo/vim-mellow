@@ -7,11 +7,17 @@ For versions prior to v1.0.0, information can be found in the git tag messages.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+
+## [1.1.0] : 2020-11-02
+
+### Added
+- Option `g:mellow_cterm_ansi` to set the type of fallback codes.
+
+
 ## [1.0.0] : 2020-11-01
 
 ### Added
 - Fallback color codes (ANSI or 256) when `termguicolors` is unset.
-- Option `g:mellow_cterm_ansi` to set the type of fallback codes.
 - Highlight setter function `s:hi`
 - README documentation for the `g:mellow_user_colors` option.
 
