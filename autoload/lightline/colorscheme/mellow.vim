@@ -16,7 +16,7 @@ if lightline#colorscheme#background() ==# 'light'
 	let s:p.normal.error = [[ s:bryellow, s:red ]]
 	let s:p.normal.warning = [[ s:bryellow, s:yellow ]]
 
-	let s:p.insert.left = [[ s:cordovan, s:green ], [ s:cordovan, s:bryellow ]]
+	let s:p.insert.left = [[ s:bryellow, s:green ], [ s:cordovan, s:bryellow ]]
 	let s:p.insert.right = [[ s:bryellow, s:green ], [ s:bryellow, s:blue ], [ s:cordovan, s:bryellow ]]
 
 	let s:p.visual.left = [[ s:bryellow, s:orange ], [ s:cordovan, s:bryellow ]]
