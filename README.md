@@ -3,7 +3,7 @@
 
 ### A warm, minimalist colorscheme for (neo)vim
 
-`Plug 'adigitoleo/vim-mellow, { 'tag': '*' }'`
+`Plug 'adigitoleo/vim-mellow, { 'tag': '*' }`
 
 <!-- vim-markdown-toc GFM -->
 
