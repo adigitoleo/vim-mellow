@@ -1,3 +1,5 @@
+" Lightline themes for Mellow <https://github.com/adigitoleo/vim-mellow>
+
 let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
 
 if lightline#colorscheme#background() ==# 'light'

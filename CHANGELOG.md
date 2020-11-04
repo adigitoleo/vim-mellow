@@ -7,6 +7,14 @@ For versions prior to v1.0.0, information can be found in the git tag messages.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] : 2020-11-04
+
+### Added
+- Lightline themes by [@toniz4](https://github.com/toniz4).
+
+### Changed
+- README now recommends installation of tagged releases.
+
 
 ## [1.1.0] : 2020-11-02
 

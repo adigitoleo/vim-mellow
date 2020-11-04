@@ -5,8 +5,9 @@
 "   |_| |_| |_|\___|_|_|\___/ \_/\_(_)  \_/ |_|_| |_| |_|
 "
 " Maintainer: adigitoleo <adigitoleo@protonmail.com>
-" Version: 1.1.0
+" Version: 1.2.0
 " Description: A warm, minimalist colorscheme for (neo)vim
+" Homepage: https://github.com/adigitoleo/vim-mellow
 
 
 let s:script_name = expand("<sfile>:t:r")

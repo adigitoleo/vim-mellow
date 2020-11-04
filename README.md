@@ -3,7 +3,7 @@
 
 ### A warm, minimalist colorscheme for (neo)vim
 
-`Plug 'adigitoleo/vim-mellow'`
+`Plug 'adigitoleo/vim-mellow, { 'tag': '*' }'`
 
 <!-- vim-markdown-toc GFM -->
 
@@ -28,8 +28,6 @@ Taken on alacritty with LiberationMono font:
     <img src="./img/syntax_dark.png" width="48%" />
 </p>
 
-*Do you want a statusline as well? Try the [mellow statusline]!*
-
 
 ### Light theme
 
@@ -46,6 +44,9 @@ Taken on alacritty with LiberationMono font:
 
 ## Installation
 
+It is recommended to install a tagged release. The master branch is not
+guaranteed to be stable.
+
 If you use a vim plugin manager (recommended), consult the relevant
 documentation. Here are some links to popular plugin managers:
 - [Pathogen]
@@ -53,8 +54,8 @@ documentation. Here are some links to popular plugin managers:
 - [Vundle]
 - [vim-plug]
 
-For manual installation, download the files from GitHub and put the `colors`
-folder inside:
+For manual installation, download the files of the latest GitHub release and
+put the `colors` folder inside:
 - `~/.vim/` (vim users)
 - `~/.config/nvim/` (neovim users)
 
@@ -74,6 +75,10 @@ if you have set `g:mellow_cterm_ansi = 1`.
 
 The colorscheme works for both `background=light` and `background=dark`
 according to the screenshots above. See `:help 'background'`.
+
+Two statusline plugins are currently supported:
+- [Lightline]
+- [mellow statusline]
 
 If it doesn't look right, you might not have a truecolor [compatible] terminal.
 It might be worth reading `:help 'termguicolors'` and `:help xterm-true-color`
@@ -173,3 +178,5 @@ Some more links, for your convenience:
 [mellow statusline]: https://github.com/adigitoleo/vim-mellow-statusline
 
 [ALE]: https://github.com/dense-analysis/ale
+
+[Lightline]: https://github.com/itchyny/lightline.vim
