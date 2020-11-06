@@ -7,6 +7,13 @@ For versions prior to v1.0.0, information can be found in the git tag messages.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.1] : 2020-11-06
+
+### Changed
+- Fix README typo in tagged release installation instructions.
+- Fix dark Lightline theme to use blue color for percentage block background.
+
+
 ## [1.2.0] : 2020-11-04
 
 ### Added

@@ -3,7 +3,7 @@
 
 ### A warm, minimalist colorscheme for (neo)vim
 
-`Plug 'adigitoleo/vim-mellow, { 'tag': '*' }`
+`Plug 'adigitoleo/vim-mellow', { 'tag': '*' }`
 
 <!-- vim-markdown-toc GFM -->
 
@@ -77,8 +77,9 @@ The colorscheme works for both `background=light` and `background=dark`
 according to the screenshots above. See `:help 'background'`.
 
 Two statusline plugins are currently supported:
-- [Lightline]
-- [mellow statusline]
+- [Lightline] --- set the Lightline colorscheme to `'mellow'`, requires
+  `termguicolors`
+- [mellow statusline] --- see link for instructions
 
 If it doesn't look right, you might not have a truecolor [compatible] terminal.
 It might be worth reading `:help 'termguicolors'` and `:help xterm-true-color`

@@ -48,23 +48,23 @@ else
 
 
 	let s:p.normal.left = [[ s:bryellow, s:cordovan ], [ s:bryellow, s:magenta ]]
-	let s:p.normal.right = [[ s:bryellow, s:cordovan ], [ s:bryellow, s:brblack ], [ s:bryellow, s:magenta ]]
+    let s:p.normal.right = [[ s:bryellow, s:cordovan ], [ s:bryellow, s:blue ], [ s:bryellow, s:magenta ]]
 	let s:p.normal.middle = [[ s:bryellow, s:magenta ]]
 	let s:p.normal.error = [[ s:bryellow, s:red ]]
 	let s:p.normal.warning = [[ s:bryellow, s:yellow ]]
 
 	let s:p.insert.left = [[ s:bryellow, s:green ], [ s:bryellow, s:magenta ]]
-	let s:p.insert.right = [[ s:bryellow, s:green ], [ s:bryellow, s:brblack ], [ s:bryellow, s:magenta ]]
+    let s:p.insert.right = [[ s:bryellow, s:green ], [ s:bryellow, s:blue ], [ s:bryellow, s:magenta ]]
 
 	let s:p.visual.left = [[ s:bryellow, s:orange ], [ s:bryellow, s:magenta ]]
-	let s:p.visual.right = [[ s:bryellow, s:orange ],[ s:bryellow, s:brblack ], [ s:bryellow, s:magenta ]]
+    let s:p.visual.right = [[ s:bryellow, s:orange ],[ s:bryellow, s:blue ], [ s:bryellow, s:magenta ]]
 
 	let s:p.inactive.left = [[ s:bryellow, s:cordovan ], [ s:bryellow, s:cordovan ]]
 	let s:p.inactive.middle = [[ s:bryellow, s:cordovan ], [ s:bryellow, s:cordovan ]]
 	let s:p.inactive.right = [[ s:bryellow, s:cordovan  ], [ s:bryellow, s:cordovan ]]
 
 	let s:p.replace.left = [[ s:bryellow, s:red ], [ s:bryellow, s:magenta ]]
-	let s:p.replace.right = [[ s:bryellow, s:red ], [ s:bryellow, s:brblack ], [ s:bryellow, s:magenta ]]
+    let s:p.replace.right = [[ s:bryellow, s:red ], [ s:bryellow, s:blue ], [ s:bryellow, s:magenta ]]
 
 	let s:p.tabline.left = [[ s:bryellow, s:cordovan ]]
 	let s:p.tabline.right = [[ s:bryellow, s:red ]]
