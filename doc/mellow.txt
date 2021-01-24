@@ -1,0 +1,152 @@
+*mellow*	https://github.com/adigitoleo/vim-mellow
+		                 __ __
+		   _  _    ___  /  /  /______    ___
+		  / \/ \  / _ \/  /  / _  \  \/\/  /
+		 /      \/ ___/  /  / /_/ /\      /
+		/__/\/\__\___/__/__/\____/  \_/\_/
+
+		A warm, minimalist colorscheme for (neo)vim
+
+==============================================================================
+CONTENTS						*mellow-contents*
+
+	1. Introduction ............................... |mellow-introduction|
+	2. Usage ...................................... |mellow-usage|
+	3. Configuration .............................. |mellow-configuration|
+	4. Customization .............................. |mellow-customization|
+	5. Statuslines ................................ |mellow-statuslines|
+	6. Palette .................................... |mellow-palette|
+
+
+==============================================================================
+INTRODUCTION						*mellow-introduction*
+
+This plugin provides a colorscheme for vim (verison 8+) and neovim (verison
+0.4+). The Mellow colorscheme is intentionally minimalist, using a palette of
+only 16 colors. The differentiation of sytnax groups is based on their
+|group-name|. Mellow supports both light and dark backgrounds via the native
+'background' setting. An effort was made to minimize confusing changes in
+syntax highlighting between themes. To get the hex codes, see |mellow-palette|.
+
+NOTE: If you are running *vim in a terminal, Mellow looks a lot better when
+'termguicolors' is set.
+
+
+==============================================================================
+USAGE							*mellow-usage*
+
+If you are reading this after entering `:help mellow` at the *vim command
+line, then the plugin is already installed. Otherwise, install it using your
+preferred plugin manager (recommended) or by copying the plugin files to
+`~/.vim/` or `~/.config/nvim/` .
+
+To test the colorscheme, run `:colorscheme mellow` . For the colorscheme to
+persist across *vim sessions, you need to add the command to your |config| file.
+
+NOTE: The colorscheme uses 24-bit RGB colors if available, which may require
+enabling the 'termguicolors' setting. If you are running *vim in a terminal
+and there is no change when toggling this setting, then you are using a
+fallback "256-color" palette. Please verify that your terminal supports true
+colors (https://gist.github.com/XVilka/8346728). See also: |g:mellow_cterm_ansi|.
+
+
+==============================================================================
+CONFIGURATION						*mellow-configuration*
+
+The following configuration options are supported for the Mellow colorscheme.
+
+------------------------------------------------------------------------------
+						*g:mellow_terminal_colors*
+
+The Mellow palette can be used to define colors for the embedded
+|terminal-emulator|. This option should be enabled by default if your *vim
+supports embedded terminals.
+
+Enable (default): `let g:mellow_terminal_colors = 1`
+Disable: `let g:mellow_terminal_colors = 0`
+
+NOTE: Colors in existing terminal buffers are NOT re-drawn when changing the
+'background'. You will need to kill and restart any terminal buffers to see
+the new colors.
+
+------------------------------------------------------------------------------
+						*g:mellow_user_colors*
+
+The Mellow colorscheme contains definitions for the 9 additional highlight
+groups |hl-User1..9|. They are not set by default.
+
+Enable: `let g:mellow_user_colors = 1`
+Disable (default): `let g:mellow_user_colors = 0`
+
+------------------------------------------------------------------------------
+						*g:mellow_cterm_ansi*
+
+The default fallback colors use the widely available 256-color palette. If
+that isn't working either, or if your *vim does not support 'termguicolors'
+but your terminal has RGB color support, you may want to fall back to a
+basic 16-color ANSI palette inherited from your terminal. This probably won't
+look like the Mellow colorscheme at all, and you are encouraged to find a
+compatible colorscheme instead.
+
+Alternatively, this setting allows you to configure the mellow palette from
+your shell/emulator configuration files and turn off 'termguicolors' to
+inherit the colors from the same configuration.
+
+Enable: `let g:mellow_cterm_ansi = 1`
+Disable (default): `let g:mellow_cterm_ansi = 0`
+
+
+==============================================================================
+CUSTOMIZATION						*mellow-customization*
+
+Making small changes to a colorscheme can easily be achieved using
+|autocommand|s. For example, to use the same background color for line numbers
+as for the document buffer: >
+
+	augroup fix_colors
+	    autocomd!
+	    autocomd ColorScheme mellow hi LineNr guibg=None
+	    autocomd ColorScheme mellow hi CursorLineNr guibg=None
+	augroup END
+
+If you use ALE (https://github.com/dense-analysis/ale), you might prefer
+stronger indicators for warnings/errors: >
+
+	augroup ale_highlights
+	    autocmd!
+	    autocmd ColorScheme mellow hi link ALEWarning Visual
+	    autocmd ColorScheme mellow hi link ALEErrorLine DiffDelete
+	augroup END
+
+
+==============================================================================
+STATUSLINES						*mellow-statuslines*
+
+The default 'statusline' implementation supports using colors directly from
+the colorscheme or from |hl-User1..9| colors via the `%N*...%*` syntax. See
+also |g:mellow_user_colors|.
+
+The Mellow colorscheme also supports the following statusline plugins:
+
+* mellow-statusline (https://github.com/adigitoleo/vim-mellow-statusline)
+
+* lightline (https://github.com/itchyny/lightline.vim): >
+	let g:lightline = {"colorscheme": "mellow"}
+
+
+==============================================================================
+PALETTE							*mellow-palette*
+
+The hex codes are listed in the `./autoload/mellow_palette.vim` file, located
+in the plugin folder. To print hex codes in a vimscript list, run >
+	echo mellow_palette#Light()
+for the light theme or >
+	echo mellow_palette#Dark()
+for the dark theme.
+
+The 256-color fallbacks are available from the same functions, if the optional
+argument "256" is provided, e.g.: >
+	echo mellow_palette#Light("256")
+
+
+vim:tw=78:ts=8:noet:ft=help:norl:
