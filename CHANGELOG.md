@@ -18,9 +18,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.3.0] : 2021-01-23
 
 ### Changed
-- Standardise Lightline themes to use bold colors and three left sections.
-- Refactor to load color definitions from a central autoload function
+- Standardise Lightline themes to use bold colors and three left sections,
   [@mvanderkamp](https://github.com/mvanderkamp).
+- Refactor to load color definitions from a central autoload function.
 
 ## [1.2.1] : 2020-11-06
 

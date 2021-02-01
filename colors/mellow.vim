@@ -9,10 +9,11 @@
 " Description: A warm, minimalist colorscheme for (neo)vim
 " Homepage: https://github.com/adigitoleo/vim-mellow
 
-
-let s:script_name = expand("<sfile>:t:r")
-
 " Clear highlights and set options. {{{1
+
+if $TERM ==# 'linux'
+    finish
+endif
 
 hi clear
 
@@ -22,16 +23,16 @@ if v:version > 580
     endif
 endif
 
-let g:colors_name = s:script_name
+let g:colors_name = 'mellow'
 
 " By default, DO define colors for :terminal.
-let s:opt_terminal_colors = get(g:, s:script_name .. "_terminal_colors", 1)
+let s:opt_terminal_colors = get(g:, g:colors_name .. "_terminal_colors", 1)
 
 " By default, DO NOT define User1-9 colors for statusline.
-let s:opt_user_colors = get(g:, s:script_name .. "_user_colors", 0)
+let s:opt_user_colors = get(g:, g:colors_name .. "_user_colors", 0)
 
 " By default, DO NOT use ANSI colors as a fallback (uses 256 colors instead).
-let s:opt_cterm_ansi = get(g:, s:script_name .. "_cterm_ansi", 0)
+let s:opt_cterm_ansi = get(g:, g:colors_name .. "_cterm_ansi", 0)
 
 " Load color palette. {{{1
 

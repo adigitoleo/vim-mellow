@@ -11,9 +11,6 @@
 * [Light theme](#light-theme)
 * [Dark theme](#dark-theme)
 * [Installation](#installation)
-* [Usage](#usage)
-* [Options](#options)
-* [Customization](#customization)
 * [Miscellaneous](#miscellaneous)
 
 <!-- vim-markdown-toc -->
@@ -59,77 +56,13 @@ put the `colors` folder inside:
 - `~/.vim/` (vim users)
 - `~/.config/nvim/` (neovim users)
 
-
-## Usage
-
-*To apply commands at startup, add them to the end of your configuration file
-(see `:help vimrc`).*
-
-You can omit the `termguicolors` part if you are running (neo)vim in a GUI, or
-if you have set `g:mellow_cterm_ansi = 1`.
-
-```vim
-:set termguicolors
-:colorscheme mellow
-```
-
-The colorscheme works for both `background=light` and `background=dark`
-according to the screenshots above. See `:help 'background'`.
+**After installing the colorscheme, please read `:help mellow` for information
+on usage and available options.**
 
 Two statusline plugins are currently supported:
-- [Lightline] --- set the Lightline colorscheme to `'mellow'`, requires
+- [Lightline] : set the Lightline colorscheme to `'mellow'`, requires
   `termguicolors`
-- [mellow statusline] --- see link for instructions
-
-If it doesn't look right, you might not have a truecolor [compatible] terminal.
-It might be worth reading `:help 'termguicolors'` and `:help xterm-true-color`
-before opening an issue.
-
-
-### Options
-
-**Use Mellow color palette in the embedded terminal:**
-- enabled (`1`) by default if your (neo)vim has the terminal feature
-- `:let g:mellow_terminal_colors = 0` to disable
-
-*NOTE: Colors in existing `:terminal` buffers are NOT re-drawn when
-changing `set background`. You will need to kill and restart any `:terminal`s
-to see the new colors.*
-
-**Define optional `User1..9` groups using Mellow colors:**
-- disabled (`0`) by default
-- `:let g:mellow_user_colors = 1` to enable
-
-**Use the first 16 terminal colors as the `cterm{bg,fg}` fallback colors:**
-- `:let g:mellow_cterm_ansi = 1` to enable
-- uses [16,256] color codes for the fallback colors by default (`0`)
-
-*NOTE: The default fallback colorschemes are rudimentary and intended for
-debugging purposes only.*
-
-
-### Customization
-
-To make small changes to a colorscheme, use autocommands (see `:help autocmd`).
-For example, to make line numbering use the normal background color:
-
-```vim
-augroup fix_colors
-    autocmd!
-    autocmd ColorScheme mellow hi LineNr guibg=None
-    autocmd ColorScheme mellow hi CursorLineNr guibg=None
-augroup END
-```
-
-If you use [ALE], you might prefer stronger highlights for warnings/errors:
-
-```vim
-augroup ale_highlights
-    au!
-    autocmd ColorScheme mellow hi link ALEWarning Visual
-    autocmd ColorScheme mellow hi link ALEErrorLine DiffDelete
-augroup END
-```
+- [mellow statusline] : my custom statusline implementation
 
 
 ## Miscellaneous
@@ -155,8 +88,6 @@ Some more links, for your convenience:
 [NOTE]: # ( ------------ PUT ALL EXTERNAL LINKS BELOW THIS LINE ------------ )
 
 [wiki]: https://github.com/adigitoleo/vim-mellow/wiki
-
-[compatible]: https://gist.github.com/XVilka/8346728
 
 [Pathogen]: https://github.com/tpope/vim-pathogen
 
