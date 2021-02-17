@@ -161,10 +161,10 @@ endif
 " Set linked groups. {{{1
 
 hi! link ColorColumn CursorLine
-hi! link Error DiffDelete
 hi! link Conceal Special
 hi! link CursorColumn CursorLine
 hi! link CursorIM Cursor
+hi! link Error DiffDelete
 hi! link DiffText Visual
 hi! link Directory DiffChange
 hi! link FoldColumn EndOfBuffer
@@ -184,7 +184,7 @@ hi! link TabLine StatusLineNC
 hi! link TabLineFill StatusLineNC
 hi! link TabLineSel StatusLine
 hi! link Terminal Normal
-hi! link Title Ignore
+hi! link Title ModeMsg
 hi! link Type Function
 hi! link VisualNOS Error
 hi! link WarningMsg Error
