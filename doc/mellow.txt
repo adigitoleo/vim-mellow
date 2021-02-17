@@ -1,11 +1,11 @@
-*mellow*	https://github.com/adigitoleo/vim-mellow
+*mellow*	A warm, minimalist colorscheme for (neo)vim
 		                 __ __
 		   _  _    ___  /  /  /______    ___
 		  / \/ \  / _ \/  /  / _  \  \/\/  /
 		 /      \/ ___/  /  / /_/ /\      /
 		/__/\/\__\___/__/__/\____/  \_/\_/
 
-		A warm, minimalist colorscheme for (neo)vim
+		https://github.com/adigitoleo/vim-mellow
 
 ==============================================================================
 CONTENTS						*mellow-contents*
