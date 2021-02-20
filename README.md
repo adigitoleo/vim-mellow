@@ -41,8 +41,8 @@ Taken on alacritty with LiberationMono font:
 
 ## Installation
 
-It is recommended to install a tagged release. The master branch is not
-guaranteed to be stable.
+*NOTE: It is recommended to install a tagged release. The master branch is not
+guaranteed to be stable.*
 
 If you use a vim plugin manager (recommended), consult the relevant
 documentation. Here are some links to popular plugin managers:
@@ -51,10 +51,9 @@ documentation. Here are some links to popular plugin managers:
 - [Vundle]
 - [vim-plug]
 
-For manual installation, download the files of the latest GitHub release and
-put the `colors` folder inside:
-- `~/.vim/` (vim users)
-- `~/.config/nvim/` (neovim users)
+Alternatively, for modern (neo)vim versions, you can use the built-in package
+management. Make sure `:echo has('packages')` returns `1` and read `:help
+packages` for instructions.
 
 **After installing the colorscheme, please read `:help mellow` for information
 on usage and available options.**
