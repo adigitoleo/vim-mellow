@@ -47,7 +47,8 @@ NOTE: The colorscheme uses 24-bit RGB colors if available, which may require
 enabling the 'termguicolors' setting. If you are running *vim in a terminal
 and there is no change when toggling this setting, then you are using a
 fallback "256-color" palette. Please verify that your terminal supports true
-colors (https://gist.github.com/XVilka/8346728). See also: |g:mellow_cterm_ansi|.
+colors (https://gist.github.com/XVilka/8346728). See also:
+|g:mellow_cterm_ansi|.
 
 NOTE: The colorscheme makes use of |bold| and |underline| attributes. Check
 |group-names|, specifically the Underlined, Error and Todo groups, to see if
@@ -85,11 +86,11 @@ Disable (default): `let g:mellow_user_colors = 0`
 						*g:mellow_cterm_ansi*
 
 This setting allows you to change the fallback mode to use base ANSI colors.
-The default fallback colors use the widely available 256-color palette. If that
-isn't working, or if your *vim does not support 'termguicolors' but your
+The default fallback colors use the widely available 256-color palette. If
+that isn't working, or if your *vim does not support 'termguicolors' but your
 terminal has RGB color support, you may want to configure the mellow palette
-from your shell/emulator configuration files and inherit the colors from there.
-To get hex codes for your shell config, see |mellow-palette|.
+from your shell/emulator configuration files and inherit the colors from
+there. To get hex codes for your shell config, see |mellow-palette|.
 
 NOTE: this setting only takes effect if you turn off 'termguicolors'.
 
