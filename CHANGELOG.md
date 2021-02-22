@@ -12,6 +12,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## UNRELEASED
 
+## [1.4.1] : 2021-02-22
+
 ### Changed
 - Link hl-Title to hl-ModeMsg instead of hl-Ignore (distinct title color)
 
