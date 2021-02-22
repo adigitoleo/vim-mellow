@@ -5,7 +5,7 @@
 " /__/\/\__\___/__/__/\____/  \_/\_/
 "
 " Maintainer: adigitoleo <adigitoleo@protonmail.com>
-" Version: 1.4.0
+" Version: 1.4.1
 " Description: A warm, minimalist colorscheme for (neo)vim
 " Homepage: https://github.com/adigitoleo/vim-mellow
 

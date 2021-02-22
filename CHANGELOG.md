@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## UNRELEASED
 
+### Changed
+- Link hl-Title to hl-ModeMsg instead of hl-Ignore (distinct title color)
+
 ## [1.4.0] : 2021-02-01
 
 ### Added
@@ -20,7 +23,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - New ASCII logo.
 - Overhaul of lightline themes.
-- Link hl-Title to hl-ModeMsg instead of hl-Ignore (distinct title color)
 
 ## [1.3.0] : 2021-01-23
 
