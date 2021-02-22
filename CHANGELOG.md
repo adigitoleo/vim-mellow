@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 
 For versions prior to v1.0.0, information can be found in the git tag messages.
 
+Versions after v1.3.0 use a new autoloaded palette function and are therefore
+backwards-incompatible (in hindsight, that should have been a v2 release...)
+
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
@@ -17,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - New ASCII logo.
 - Overhaul of lightline themes.
+- Link hl-Title to hl-ModeMsg instead of hl-Ignore (distinct title color)
 
 ## [1.3.0] : 2021-01-23
 
@@ -28,7 +32,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.2.1] : 2020-11-06
 
 ### Changed
-- Fix README typo in tagged release installation instructions.
 - Fix dark Lightline theme to use blue color for percentage block background.
 
 
@@ -36,10 +39,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Lightline themes by [@toniz4](https://github.com/toniz4).
-
-### Changed
-- README now recommends installation of tagged releases.
-
 
 ## [1.1.0] : 2020-11-02
 
