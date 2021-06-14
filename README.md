@@ -5,16 +5,6 @@
 
 `Plug 'adigitoleo/vim-mellow', { 'tag': '*' }`
 
-<!-- vim-markdown-toc GFM -->
-
-* [Screenshots](#screenshots)
-* [Light theme](#light-theme)
-* [Dark theme](#dark-theme)
-* [Installation](#installation)
-* [Miscellaneous](#miscellaneous)
-
-<!-- vim-markdown-toc -->
-
 
 ## Screenshots
 
@@ -44,24 +34,26 @@ Taken on alacritty with LiberationMono font:
 *NOTE: It is recommended to install a tagged release. The master branch is not
 guaranteed to be stable.*
 
-If you use a vim plugin manager (recommended), consult the relevant
-documentation. Here are some links to popular plugin managers:
+If you use a vim plugin manager, consult the relevant documentation.
+Here are some links to popular plugin managers:
 - [Pathogen]
 - [NeoBundle]
 - [Vundle]
 - [vim-plug]
 
-Alternatively, for modern (neo)vim versions, you can use the built-in package
-management. Make sure `:echo has('packages')` returns `1` and read `:help
-packages` for instructions.
+Alternatively, check [the helpfile](doc/mellow.txt) for native package loading instructions.
 
 **After installing the colorscheme, please read `:help mellow` for information
 on usage and available options.**
 
+
+### Statusline integration
+
 Two statusline plugins are currently supported:
 - [Lightline] : set the Lightline colorscheme to `'mellow'`, requires
   `termguicolors`
-- [mellow statusline] : my custom statusline implementation
+- [mellow statusline] : simple ASCII statusline, requires
+  `let g:mellow_user_colors = 1`
 
 
 ## Miscellaneous

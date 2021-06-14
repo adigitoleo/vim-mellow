@@ -11,11 +11,12 @@
 CONTENTS						*mellow-contents*
 
 	1. Introduction ............................... |mellow-introduction|
-	2. Usage ...................................... |mellow-usage|
-	3. Configuration .............................. |mellow-configuration|
-	4. Customization .............................. |mellow-customization|
-	5. Statuslines ................................ |mellow-statuslines|
-	6. Palette .................................... |mellow-palette|
+	2. Installation ............................... |mellow-installation|
+	3. Usage ...................................... |mellow-usage|
+	4. Configuration .............................. |mellow-configuration|
+	5. Customization .............................. |mellow-customization|
+	6. Integration ................................ |mellow-integration|
+	7. Palette .................................... |mellow-palette|
 
 
 ==============================================================================
@@ -33,12 +34,25 @@ when 'termguicolors' is set.
 
 
 ==============================================================================
-USAGE							*mellow-usage*
+INSTALLATION						*mellow-installation*
 
-If you are reading this after entering `:help mellow` at the *vim command
-line, then the plugin is already installed. Otherwise, install it using your
-preferred plugin manager (recommended) or by copying the plugin files to
-`~/.vim/` or `~/.config/nvim/` .
+Install the plugin using your preferred plugin manager. Alternatively, *vim
+can load |packages| if they are added to your |'packpath'| as follows:
+
+1. If it is missing, create the folder `pack/<package-group>/start` in your
+|'packpath'|, where `<package-group>` can be whatever you like.
+
+2. Download a tagged archive from
+<https://github.com/adigitoleo/vim-mellow/releases> and unpack it.
+
+3. Move the contents of the unpacked archive into a new folder
+`mellow`, created inside the package folder from step 1.
+
+NOTE: You will need to repeat this process to get new versions of the plugin.
+
+
+==============================================================================
+USAGE							*mellow-usage*
 
 To test the colorscheme, run `:colorscheme mellow` . For the colorscheme to
 persist across *vim sessions, you need to add the command to your |config| file.
@@ -122,11 +136,14 @@ stronger indicators for warnings/errors: >
 
 
 ==============================================================================
-STATUSLINES						*mellow-statuslines*
+INTEGRATION						*mellow-integration*
+
+The Mellow colorscheme does not work if your `$TERM` is `linux`, e.g. in a
+virtual console (tty).
 
 The default 'statusline' implementation supports using colors directly from
-the colorscheme or from |hl-User1..9| colors via the `%N*...%*` syntax. See
-also |g:mellow_user_colors|.
+the colorscheme or from |hl-User1..9| colors via `%#GroupName#...%` and
+`%N*...%*` syntax, respectively. See also |g:mellow_user_colors|.
 
 The Mellow colorscheme also supports the following statusline plugins:
 
