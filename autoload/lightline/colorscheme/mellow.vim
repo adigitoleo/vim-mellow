@@ -67,7 +67,10 @@ endif
 let g:lightline#colorscheme#mellow#palette = lightline#colorscheme#flatten(s:p)
 
 " See https://github.com/itchyny/lightline.vim/issues/424#issuecomment-590058820
-autocmd OptionSet background
-    \ runtime autocmd/lightline/colorscheme/mellow.vim
-    \ | call lightline#colorscheme()
-    \ | call lightline#update()
+augroup MellowLightlineAutocmd
+    autocmd!
+    autocmd OptionSet background
+        \ runtime autoload/lightline/colorscheme/mellow.vim
+        \ | call lightline#colorscheme()
+        \ | call lightline#update()
+augroup END
