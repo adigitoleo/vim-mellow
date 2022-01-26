@@ -43,7 +43,7 @@ can load |packages| if they are added to your |'packpath'| as follows:
 |'packpath'|, where `<package-group>` can be whatever you like.
 
 2. Download a tagged archive from
-<https://github.com/adigitoleo/vim-mellow/releases> and unpack it.
+<https://github.com/adigitoleo/vim-mellow/tags> and unpack it.
 
 3. Move the contents of the unpacked archive into a new folder
 `mellow`, created inside the package folder from step 1.
