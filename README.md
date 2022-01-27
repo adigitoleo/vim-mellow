@@ -15,18 +15,7 @@ Taken on alacritty with LiberationMono font:
     <img src="./img/syntax_dark.png" width="48%" />
 </p>
 
-
-### Light theme
-
-![light-palette](./img/palette_light.png)
-
-![light-example](./img/mellow_light.png)
-
-### Dark theme
-
-![dark-palette](./img/palette_dark.png)
-
-![dark-example](./img/mellow_dark.png)
+For more screenshots, check the [wiki].
 
 
 ## Installation
