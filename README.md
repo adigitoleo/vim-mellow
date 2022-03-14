@@ -59,11 +59,6 @@ Since the theme uses only 16 colors, you can use the same colors in your
 terminal of choice. Check the [wiki] for an example Alacritty theme, as well as
 experimental Mellow colorschemes for some other Linux stuff.
 
-Some more links, for your convenience:
-- [RGB mellow palette (bg=light)]
-- [RGB mellow palette (bg=dark)]
-- [mellow statusline]
-
 
 [NOTE]: # ( ------------ PUT ALL EXTERNAL LINKS BELOW THIS LINE ------------ )
 
@@ -82,10 +77,6 @@ Some more links, for your convenience:
 [solarized]: https://en.wikipedia.org/wiki/Solarized_(color_scheme)
 
 [gruvbox]: https://github.com/morhetz/gruvbox
-
-[RGB mellow palette (bg=light)]: https://colourco.de/freebuild/e0ccae-f2ddbc-0f0908-3d241f-af0032-ff7477-4c6e25-84bf40-a67458-f5bb89-573e55-8a7b85-66292f-8a4b53-bf472c-d47d49
-
-[RGB mellow palette (bg=dark)]: https://colourco.de/freebuild/d3c1a6-eccd9d-0f0908-3d241f-af0032-ff7477-577e2a-84bf40-bf9169-f5bb89-896186-9f939b-66292f-8a4b53-bf472c-d47d49
 
 [mellow statusline]: https://github.com/adigitoleo/vim-mellow-statusline
 
