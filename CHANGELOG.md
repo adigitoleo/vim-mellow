@@ -10,6 +10,15 @@ backwards-incompatible (in hindsight, that should have been a v2 release...)
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.5.0] : 2022-03-14
+
+### Changed
+- Light yellow, to be easier to read on the light theme background
+
+### Fixed
+- Lightline colorscheme, to be responsive to `background` changes,
+  [@mvanderkamp](https://github.com/mvanderkamp).
+
 ## [1.4.3] : 2021-06-14
 
 ### Changed
