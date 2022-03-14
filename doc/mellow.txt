@@ -37,24 +37,15 @@ when 'termguicolors' is set.
 INSTALLATION						*mellow-installation*
 
 Install the plugin using your preferred plugin manager. Alternatively, *vim
-can load |packages| if they are added to your |'packpath'| as follows:
-
-1. If it is missing, create the folder `pack/<package-group>/start` in your
-|'packpath'|, where `<package-group>` can be whatever you like.
-
-2. Download a tagged archive from
-<https://github.com/adigitoleo/vim-mellow/tags> and unpack it.
-
-3. Move the contents of the unpacked archive into a new folder
-`mellow`, created inside the package folder from step 1.
-
-NOTE: You will need to repeat this process to get new versions of the plugin.
+can load |packages| if they are added to your |'packpath'|. Archives of
+tagged releases are available at
+<https://github.com/adigitoleo/vim-mellow/tags>.
 
 
 ==============================================================================
 USAGE							*mellow-usage*
 
-To test the colorscheme, run `:colorscheme mellow` . For the colorscheme to
+To apply the colorscheme, run `:colorscheme mellow` . For the colorscheme to
 persist across *vim sessions, you need to add the command to your |config| file.
 
 NOTE: The colorscheme uses 24-bit RGB colors if available, which may require

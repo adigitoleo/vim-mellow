@@ -30,8 +30,6 @@ Here are some links to popular plugin managers:
 - [Vundle]
 - [vim-plug]
 
-Alternatively, check [the helpfile](doc/mellow.txt) for native package loading instructions.
-
 **After installing the colorscheme, please read `:help mellow` for information
 on usage and available options.**
 
