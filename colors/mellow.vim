@@ -210,9 +210,9 @@ if s:opt_user_colors
         " Colors for statusline diagnostics: red (1) and green (2).
         exe s:hi('default User1',   11, 1,  'bold')
         exe s:hi('default User2',   11, 2,  'bold')
-        " Subtle colors for miscellaneous indicators: sand (3) and orange (4).
-        exe s:hi('default User3',   11, 13)
-        exe s:hi('default User4',   11, 14)
+        " Subtle colors for miscellaneous indicators: sand (3) and gray (4).
+        exe s:hi('default User3',   11, 3)
+        exe s:hi('default User4',   11, 12)
         " Inverse colors for mode indicators:
         " cordovan (5), green (6), orange (7), red (8) and blue (9)
         exe s:hi('default User5',   13, 11, 'bold')
@@ -225,9 +225,9 @@ if s:opt_user_colors
         " Colors for statusline diagnostics: red (1) and green (2).
         exe s:hi('default User1',   5,  9,  'bold')
         exe s:hi('default User2',   5,  10, 'bold')
-        " Subtle colors for miscellaneous indicators: sand (3) and orange (4).
-        exe s:hi('default User3',   5,  13)
-        exe s:hi('default User4',   5,  14)
+        " Subtle colors for miscellaneous indicators: sand (3) and gray (4).
+        exe s:hi('default User3',   5,  3)
+        exe s:hi('default User4',   5,  12)
         " Inverse colors for mode indicators:
         " cordovan (5), green (6), orange (7), red (8) and blue (9)
         exe s:hi('default User5',   13, 11, 'bold')

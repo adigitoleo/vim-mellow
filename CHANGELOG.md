@@ -10,6 +10,12 @@ backwards-incompatible (in hindsight, that should have been a v2 release...)
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.5.2] : 2022-04-11
+
+### Changed
+- Update UserColors 3 and 4 ("subtle" colors on statusline background)
+  to better accommodate v1.5 changes in vim-mellow-statusline
+
 ## [1.5.1] : 2022-03-15
 
 ### Fixed
