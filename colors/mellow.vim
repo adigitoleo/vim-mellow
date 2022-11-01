@@ -24,14 +24,22 @@ endif
 
 let g:colors_name = 'mellow'
 
+function! s:setopt(suffix, default) abort
+    if has("nvim")
+        return get(g:, g:colors_name .. a:suffix, a:default)
+    else
+        return get(g:, g:colors_name . a:suffix, a:default)
+    endif
+endfunction
+
 " By default, DO define colors for :terminal.
-let s:opt_terminal_colors = get(g:, g:colors_name .. "_terminal_colors", 1)
+let s:opt_terminal_colors = s:setopt("_terminal_colors", 1)
 
 " By default, DO NOT define User1-9 colors for statusline.
-let s:opt_user_colors = get(g:, g:colors_name .. "_user_colors", 0)
+let s:opt_user_colors = s:setopt("_user_colors", 0)
 
 " By default, DO NOT use ANSI colors as a fallback (uses 256 colors instead).
-let s:opt_cterm_ansi = get(g:, g:colors_name .. "_cterm_ansi", 0)
+let s:opt_cterm_ansi = s:setopt("_cterm_ansi", 0)
 
 " Load color palette. {{{1
 
