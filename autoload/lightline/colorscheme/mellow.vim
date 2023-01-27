@@ -13,7 +13,7 @@ function! s:hi(fg, bg, ...)
     return a:0 ? [l:fg, l:bg, a:1] : [l:fg, l:bg]
 endfunction
 
-let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
+let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}, 'command': {}}
 
 if lightline#colorscheme#background() ==# 'light'
     let s:p.normal.left = [s:hi(11, 13, 'bold'), s:hi(15, 3), s:hi(13, 11)]
@@ -39,6 +39,8 @@ if lightline#colorscheme#background() ==# 'light'
     let s:p.tabline.right = [s:hi(11, 1)]
     let s:p.tabline.tabsel = [s:hi(15, 3, 'bold')]
 
+    let s:p.command.left = [s:hi(11, 4, 'bold'), s:hi(15, 3), s:hi(13, 11)]
+    let s:p.command.right = [s:hi(11, 4, 'bold'), s:hi(15, 3), s:hi(13, 11)]
 else
     let s:p.normal.left = [s:hi(8, 12, 'bold'), s:hi(15, 13), s:hi(11, 5)]
     let s:p.normal.right = [s:hi(8, 12, 'bold'), s:hi(15, 13), s:hi(11, 5)]
@@ -62,6 +64,9 @@ else
     let s:p.tabline.left = [s:hi(8, 12)]
     let s:p.tabline.right = [s:hi(11, 1)]
     let s:p.tabline.tabsel = [s:hi(11, 13, 'bold')]
+
+    let s:p.command.left = [s:hi(11, 4, 'bold'), s:hi(15, 3), s:hi(13, 11)]
+    let s:p.command.right = [s:hi(11, 4, 'bold'), s:hi(15, 3), s:hi(13, 11)]
 endif
 
 let g:lightline#colorscheme#mellow#palette = lightline#colorscheme#flatten(s:p)
