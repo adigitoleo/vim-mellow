@@ -17,7 +17,7 @@ endif
 hi clear
 
 if v:version > 580
-    if exists("g:syntax_on")
+    if exists('g:syntax_on')
         syntax reset
     endif
 endif
@@ -25,32 +25,32 @@ endif
 let g:colors_name = 'mellow'
 
 function! s:setopt(suffix, default) abort
-    if has("nvim")
-        return get(g:, g:colors_name .. a:suffix, a:default)
+    if has('nvim')
+        return get(g:, g:colors_name . a:suffix, a:default)
     else
         return get(g:, g:colors_name . a:suffix, a:default)
     endif
 endfunction
 
 " By default, DO define colors for :terminal.
-let s:opt_terminal_colors = s:setopt("_terminal_colors", 1)
+let s:opt_terminal_colors = s:setopt('_terminal_colors', 1)
 
 " By default, DO NOT define User1-9 colors for statusline.
-let s:opt_user_colors = s:setopt("_user_colors", 0)
+let s:opt_user_colors = s:setopt('_user_colors', 0)
 
 " By default, DO NOT use ANSI colors as a fallback (uses 256 colors instead).
-let s:opt_cterm_ansi = s:setopt("_cterm_ansi", 0)
+let s:opt_cterm_ansi = s:setopt('_cterm_ansi', 0)
 
 " Load color palette. {{{1
 
 if &background ==# 'light'
     let s:colors = mellow_palette#Light()
     let s:colors_fallback = s:opt_cterm_ansi ?
-                \ range(16) : mellow_palette#Light("256")
+                \ range(16) : mellow_palette#Light('256')
 else
     let s:colors = mellow_palette#Dark()
     let s:colors_fallback = s:opt_cterm_ansi ?
-                \ range(16) : mellow_palette#Dark("256")
+                \ range(16) : mellow_palette#Dark('256')
 endif
 
 " Define highlight setter function. {{{1
@@ -64,7 +64,7 @@ function! s:hi(group, bg, fg, ...) abort
     let l:ctermfg = type(a:fg) == type('') ? a:fg : s:colors_fallback[a:fg]
 
     let l:colors = printf(
-                \ "hi %s ctermbg=%s guibg=%s ctermfg=%s guifg=%s",
+                \ 'hi %s ctermbg=%s guibg=%s ctermfg=%s guifg=%s',
                 \ a:group, l:ctermbg, l:guibg, l:ctermfg, l:guifg
                 \)
 
@@ -77,11 +77,11 @@ function! s:hi(group, bg, fg, ...) abort
             let l:options = l:opt
         elseif type(l:opt) == type(0)
             " Parse guisp color integer in the range [0,15].
-            let l:colors .= printf(" guisp=%s", s:colors[l:opt])
+            let l:colors .= printf(' guisp=%s', s:colors[l:opt])
         endif
     endfor
 
-    return printf("%s cterm=%s gui=%s", l:colors, l:options, l:options)
+    return printf('%s cterm=%s gui=%s', l:colors, l:options, l:options)
 endfunction
 
 " Set main colors. {{{1
@@ -201,11 +201,11 @@ hi! link helpNormal StatusLineNC
 " Set terminal colors. {{{1
 
 if s:opt_terminal_colors
-    if has("nvim")
+    if has('nvim')
         for idx in range(16)
-            call nvim_set_var("terminal_color_" .. idx, s:colors[idx])
+            call nvim_set_var('terminal_color_' . idx, s:colors[idx])
         endfor
-    elseif has("terminal")
+    elseif has('terminal')
         let g:terminal_ansi_colors = s:colors
     endif
 endif

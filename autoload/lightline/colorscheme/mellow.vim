@@ -13,7 +13,15 @@ function! s:hi(fg, bg, ...)
     return a:0 ? [l:fg, l:bg, a:1] : [l:fg, l:bg]
 endfunction
 
-let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}, 'command': {}}
+let s:p = {
+            \ 'normal': {},
+            \ 'inactive': {},
+            \ 'insert': {},
+            \ 'replace': {},
+            \ 'visual': {},
+            \ 'tabline': {},
+            \ 'command': {},
+            \ }
 
 if lightline#colorscheme#background() ==# 'light'
     let s:p.normal.left = [s:hi(11, 13, 'bold'), s:hi(15, 3), s:hi(13, 11)]

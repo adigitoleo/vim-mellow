@@ -2,7 +2,7 @@
 " <https://github.com/adigitoleo/vim-mellow>
 
 function mellow_palette#Light(...)
-    if a:0 && a:1 == "256"
+    if a:0 && a:1 ==# '256'
         " xterm-256 conversions: https://codegolf.stackexchange.com/a/156985
         return [
                     \ 232, 125, 58, 137, 240, 236, 130, 187,
@@ -31,7 +31,7 @@ function mellow_palette#Light(...)
 endfunction
 
 function mellow_palette#Dark(...)
-    if a:0 && a:1 == "256"
+    if a:0 && a:1 ==# '256'
         " xterm-256 conversions: https://codegolf.stackexchange.com/a/156985
         return [
                     \ 232, 125, 64, 137, 96, 236, 130, 181,
