@@ -124,6 +124,7 @@ if &background ==# 'light'
     exe s:hi('VertSplit',       7,          3,          'bold')
     exe s:hi('Visual',          11,         'NONE')
     exe s:hi('WildMenu',        7,          6)
+    exe s:hi('Whitespace',      'NONE',     7)
 
 else
     " -------- group ------------ bg--------- fg ------- special -------
@@ -163,6 +164,7 @@ else
     exe s:hi('VertSplit',       8,          13,         'bold')
     exe s:hi('Visual',          5,          'NONE')
     exe s:hi('WildMenu',        8,          14)
+    exe s:hi('Whitespace',      'NONE',     8)
 endif
 
 " Set linked groups. {{{1
