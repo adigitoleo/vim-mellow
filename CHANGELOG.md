@@ -12,8 +12,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [UNRELEASED]
 
+## [1.5.5] : 2023-07-26
+
 ### Added
 - 'command' mode colors for the lightline theme
+- 'Whitespace' group colors (used for e.g. indent guides, "non-printed" chars)
 
 ## [1.5.4] : 2022-11-02
 
