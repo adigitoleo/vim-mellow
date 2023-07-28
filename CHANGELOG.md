@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [UNRELEASED]
 
+### Added
+- Highlight links for the basic set of neovim's LSP diagnostics
+
 ## [1.5.5] : 2023-07-26
 
 ### Added

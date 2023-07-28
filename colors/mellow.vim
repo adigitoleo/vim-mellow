@@ -173,9 +173,14 @@ hi! link ColorColumn CursorLine
 hi! link Conceal Special
 hi! link CursorColumn CursorLine
 hi! link CursorIM Cursor
-hi! link Error DiffDelete
+hi! link DiagnosticError SpellBad
+hi! link DiagnosticHint SpellCap
+hi! link DiagnosticInfo SpellLocal
+hi! link DiagnosticOk DiffAdd
+hi! link DiagnosticWarn SpellRare
 hi! link DiffText Visual
 hi! link Directory DiffChange
+hi! link Error DiffDelete
 hi! link FoldColumn EndOfBuffer
 hi! link Folded EndOfBuffer
 hi! link MatchParen PmenuSel
