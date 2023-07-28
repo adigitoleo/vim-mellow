@@ -173,11 +173,11 @@ hi! link ColorColumn CursorLine
 hi! link Conceal Special
 hi! link CursorColumn CursorLine
 hi! link CursorIM Cursor
-hi! link DiagnosticError SpellBad
-hi! link DiagnosticHint SpellCap
-hi! link DiagnosticInfo SpellLocal
+hi! link DiagnosticError ErrorMsg
+hi! link DiagnosticHint Special
+hi! link DiagnosticInfo MoreMsg
 hi! link DiagnosticOk DiffAdd
-hi! link DiagnosticWarn SpellRare
+hi! link DiagnosticWarn WarningMsg
 hi! link DiffText Visual
 hi! link Directory DiffChange
 hi! link Error DiffDelete
