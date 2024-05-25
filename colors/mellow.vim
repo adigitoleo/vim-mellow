@@ -210,6 +210,11 @@ hi! link WarningMsg Error
 hi! link helpLeadBlank StatusLineNC
 hi! link helpNormal StatusLineNC
 
+" Maybe they will remove the hard-coded @variable RGB in future versions...
+if has('nvim') && v:lua.vim.version().major == 0 && v:lua.vim.version().minor == 10 && v:lua.vim.version().patch == 0
+    hi! link @variable Identifier
+endif
+
 " Set terminal colors. {{{1
 
 if s:opt_terminal_colors
