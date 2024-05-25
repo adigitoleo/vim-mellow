@@ -10,6 +10,14 @@ backwards-incompatible (in hindsight, that should have been a v2 release...)
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.5.7] : 2024-05-26
+
+### Added
+- Highlight links to restore previous look for `Delimiter` and `Operator`
+  groups, which were given their own colors in NeoVim 0.10
+- Highlight links for the new NeoVim 0.10 group names: `Added`, `Changed` and
+  `Removed` (which are mostly used for diff buffers)
+
 ## [1.5.6] : 2024-02-11
 
 ### Added

@@ -169,10 +169,13 @@ endif
 
 " Set linked groups. {{{1
 
+hi! link Added DiffAdd
+hi! link Changed DiffChanged
 hi! link ColorColumn CursorLine
 hi! link Conceal Special
 hi! link CursorColumn CursorLine
 hi! link CursorIM Cursor
+hi! link Delimiter Special
 hi! link DiagnosticError ErrorMsg
 hi! link DiagnosticHint Special
 hi! link DiagnosticInfo MoreMsg
@@ -185,10 +188,12 @@ hi! link FoldColumn EndOfBuffer
 hi! link Folded EndOfBuffer
 hi! link MatchParen PmenuSel
 hi! link Number Constant
+hi! link Operator Statement
 hi! link PmenuSbar Pmenu
 hi! link PreProc Identifier
 hi! link Question ModeMsg
 hi! link QuickFixLine Underlined
+hi! link Removed DiffDelete
 hi! link Search IncSearch
 hi! link SignColumn CursorLine
 hi! link SpecialKey Special
