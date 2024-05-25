@@ -3,32 +3,29 @@
 
 ### A warm, minimalist colorscheme for (neo)vim
 
-`Plug 'adigitoleo/vim-mellow', { 'tag': '*' }`
+This colorscheme uses only 16 distinct colors for the dark or light theme.
+It looks best with `termguicolors` enabled, but a fallback theme is also
+provided if this option is not enabled (e.g. in the Linux vconsole).
+It should work on Vim version 8 or later,
+and supports additional highlight groups introduced in NeoVim 0.10.
 
+This colorscheme is not affiliated with [mellow.nvim](https://github.com/mellow-theme/mellow.nvim).
 
-## Screenshots
-
-Taken on alacritty with LiberationMono font:
+Screenshots taken on alacritty with LiberationMono font:
 
 <p align="center" style="margin: 4%;">
     <img src="./img/syntax_light.png" width="48%" />
     <img src="./img/syntax_dark.png" width="48%" />
 </p>
 
-For more screenshots, check the [wiki].
+For more screenshots, check the [wiki], or [vimcolorschemes.com](https://vimcolorschemes.com/adigitoleo/vim-mellow).
 
 
 ## Installation
 
-*NOTE: It is recommended to install a tagged release. The master branch is not
-guaranteed to be stable.*
-
 If you use a vim plugin manager, consult the relevant documentation.
-Here are some links to popular plugin managers:
-- [Pathogen]
-- [NeoBundle]
-- [Vundle]
-- [vim-plug]
+Otherwise, please add at least the `autoload`, `colors` and `doc` folders to
+your (Neo)Vim package/runtime path.
 
 **After installing the colorscheme, please read `:help mellow` for information
 on usage and available options.**
@@ -38,8 +35,9 @@ on usage and available options.**
 
 Two statusline plugins are currently supported:
 - [Lightline] : set the Lightline colorscheme to `'mellow'`, requires
-  `termguicolors`
-- [mellow statusline] : simple ASCII statusline, requires
+  `termguicolors` (I don't use this statusline, so please contribute patches or
+  at least report an issue if the integration needs to be fixed)
+- [mellow statusline] : my simple ASCII statusline, requires
   `let g:mellow_user_colors = 1`
 
 
@@ -62,14 +60,6 @@ experimental Mellow colorschemes for some other Linux stuff.
 
 [wiki]: https://github.com/adigitoleo/vim-mellow/wiki
 
-[Pathogen]: https://github.com/tpope/vim-pathogen
-
-[NeoBundle]: https://github.com/Shougo/neobundle.vim
-
-[Vundle]: https://github.com/gmarik/vundle
-
-[vim-plug]: https://github.com/junegunn/vim-plug
-
 [vim-farout]: https://github.com/fcpg/vim-farout
 
 [solarized]: https://en.wikipedia.org/wiki/Solarized_(color_scheme)
@@ -77,7 +67,5 @@ experimental Mellow colorschemes for some other Linux stuff.
 [gruvbox]: https://github.com/morhetz/gruvbox
 
 [mellow statusline]: https://github.com/adigitoleo/vim-mellow-statusline
-
-[ALE]: https://github.com/dense-analysis/ale
 
 [Lightline]: https://github.com/itchyny/lightline.vim
