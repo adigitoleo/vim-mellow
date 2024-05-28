@@ -167,6 +167,19 @@ else
     exe s:hi('Whitespace',      'NONE',     8)
 endif
 
+if has('nvim')
+    exe s:hi('DiagnosticUnderlineError', 'NONE', 'NONE', 'underline', 1)
+    exe s:hi('DiagnosticUnderlineWarn', 'NONE', 'NONE', 'underline', 6)
+    exe s:hi('DiagnosticUnderlineInfo', 'NONE', 'NONE', 'underline', 3)
+    exe s:hi('DiagnosticUnderlineHint', 'NONE', 'NONE', 'underline', 4)
+    exe s:hi('DiagnosticUnderlineOk', 'NONE', 'NONE', 'underline', 2)
+    " NOTE: This treesitter stuff seem to be hardcoded to something sensible:
+    " @markup.strong
+    " @markup.italic
+    " @markup.strikethrough
+    " @markup.underline
+endif
+
 " Set linked groups. {{{1
 
 hi! link Added DiffAdd
@@ -176,11 +189,6 @@ hi! link Conceal Special
 hi! link CursorColumn CursorLine
 hi! link CursorIM Cursor
 hi! link Delimiter Special
-hi! link DiagnosticError ErrorMsg
-hi! link DiagnosticHint Special
-hi! link DiagnosticInfo MoreMsg
-hi! link DiagnosticOk DiffAdd
-hi! link DiagnosticWarn WarningMsg
 hi! link DiffText Visual
 hi! link Directory DiffChange
 hi! link Error DiffDelete
@@ -210,9 +218,125 @@ hi! link WarningMsg Error
 hi! link helpLeadBlank StatusLineNC
 hi! link helpNormal StatusLineNC
 
-" Maybe they will remove the hard-coded @variable RGB in future versions...
-if has('nvim') && v:lua.vim.version().major == 0 && v:lua.vim.version().minor == 10 && v:lua.vim.version().patch == 0
+" In NeoVim, we need to additionally set highlight groups from:
+" :h diagnostic-highlights
+" :h lsp-highlight
+" :h treesitter-highlight-groups
+" As well as all (Normal)Float* and Win* groups from :h highlight-groups.
+if has('nvim')
+    hi! link DiagnosticError ErrorMsg
+    hi! link DiagnosticHint Special
+    hi! link DiagnosticInfo MoreMsg
+    hi! link DiagnosticOk DiffAdd
+    hi! link DiagnosticWarn WarningMsg
+    " The other Diagnostic* groups should link to the above by default,
+    " except DiagnosticUnderline*, which are given explicit values earlier.
+    hi! link NormalFloat Normal
+    hi! link FloatBorder MoreMsg
+    hi! link FloatTitle Title
+    hi! link FloatFooter Title
+    hi! link WinSeparator VertSplit
+    hi! link WinBar StatusLine
+    hi! link WinBarNC StatusLineNC
+
+    hi! link LspReferenceText Visual
+    hi! link LspReferenceRead WildMenu
+    hi! link LspReferenceWrite PmenuSel
+    hi! link LspInlayHint EndOfBuffer
+    hi! link LspCodeLens NonText
+    hi! link LspCodeLensSeparator NonText
+    hi! link LspSignatureActiveParameter Visual
+    " The @lsp.type.* and @lsp.mod.* groups from :h lsp-semantic-highlight
+    " seem to be sensible links by default, and @lsp.typemod.* groups are
+    " missing from the helpfile so I assume they are basically experimental.
+    " Either way that stuff is arguably too exotic to be expected of a
+    " colorscheme by default.
     hi! link @variable Identifier
+    hi! link @variable.builtin Special
+    hi! link @variable.parameter Identifier
+    hi! link @variable.parameter.builtin Special
+    hi! link @variable.member Identifier
+    hi! link @constant Constant
+    hi! link @constant.builtin Special
+    hi! link @constant.macro Macro
+    hi! link @module Structure
+    hi! link @module.builtin Special
+    hi! link @label Label
+    hi! link @string String
+    hi! link @string.documentation Comment
+    hi! link @string.regexp Special
+    hi! link @string.escape Special
+    hi! link @string.special Special
+    hi! link @string.special.symbol Special
+    hi! link @string.special.path Special
+    hi! link @string.special.url Underline
+    hi! link @character Character
+    hi! link @character.special SpecialChar
+    hi! link @boolean Boolean
+    hi! link @number Number
+    hi! link @number.float Float
+    hi! link @type Type
+    hi! link @type.builtin Special
+    hi! link @type.definition Typedef
+    hi! link @attribute Macro
+    hi! link @attribute.builtin Special
+    hi! link @property Identifier
+    hi! link @function Function
+    hi! link @function.builtin Special
+    hi! link @function.call Function
+    hi! link @function.macro Macro
+    hi! link @function.method Function
+    hi! link @function.method.call Function
+    hi! link @constructor Function
+    hi! link @operator Operator
+    hi! link @keyword Keyword
+    hi! link @keyword.coroutine Keyword
+    hi! link @keyword.function Keyword
+    hi! link @keyword.operator Keyword
+    hi! link @keyword.import Keyword
+    hi! link @keyword.type Keyword
+    hi! link @keyword.modifier Keyword
+    hi! link @keyword.repeat Keyword
+    hi! link @keyword.return Keyword
+    hi! link @keyword.debug Keyword
+    hi! link @keyword.exception Keyword
+    hi! link @keyword.conditional Keyword
+    hi! link @keyword.conditional.ternary Keyword
+    hi! link @keyword.directive Keyword
+    hi! link @keyword.directive.define Keyword
+    hi! link @punctuation.delimiter Delimiter
+    hi! link @punctuation.bracket Delimiter
+    hi! link @punctuation.special Special
+    hi! link @comment Comment
+    hi! link @comment.documentation Comment
+    hi! link @comment.error ErrorMsg
+    hi! link @comment.warning WarningMsg
+    hi! link @comment.todo Todo
+    hi! link @comment.note MoreMsg
+    hi! link @markup.heading Title
+    hi! link @markup.heading.1 Title
+    hi! link @markup.heading.2 Title
+    hi! link @markup.heading.3 Title
+    hi! link @markup.heading.4 Title
+    hi! link @markup.heading.5 Title
+    hi! link @markup.heading.6 Title
+    hi! link @markup.quote Special
+    hi! link @markup.math Special
+    hi! link @markup.link Underlined
+    hi! link @markup.link.label Underlined
+    hi! link @markup.link.url Underlined
+    hi! link @markup.raw Special
+    hi! link @markup.raw.block Special
+    hi! link @markup.list Operator
+    hi! link @markup.list.checked Operator
+    hi! link @markup.list.unchecked Operator
+    hi! link @diff.plus DiffAdd
+    hi! link @diff.minus DiffDelete
+    hi! link @diff.delta DiffChange
+    hi! link @tag Tag
+    hi! link @tag.builtin Tag
+    hi! link @tag.attribute Tag
+    hi! link @tag.delimiter Tag
 endif
 
 " Set terminal colors. {{{1
