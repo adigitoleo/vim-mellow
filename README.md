@@ -23,12 +23,19 @@ For more screenshots, check the [wiki], or [vimcolorschemes.com](https://vimcolo
 
 ## Installation
 
-If you use a vim plugin manager, consult the relevant documentation.
-Otherwise, please add at least the `autoload`, `colors` and `doc` folders to
-your (Neo)Vim package/runtime path.
+Install the plugin using your preferred plugin manager. Alternatively, (Neo)Vim
+can load packages if they are added to your 'packpath' (see `:help packages`).
+Archives of tagged releases are available at
+<https://github.com/adigitoleo/vim-mellow/tags>.
 
-**After installing the colorscheme, please read `:help mellow` for information
-on usage and available options.**
+Otherwise, please add at least the `autoload`, `colors` and `doc` folders to
+your (Neo)Vim package/runtime path (see `:help 'runtimepath'`).
+
+After installing the colorscheme, please read `:help mellow` for information
+on usage and available options. This includes an option to switch the fallback
+color codes to ANSI mode instead of the default 256-color fallback palette.
+
+Apply the colorscheme with `:colorscheme mellow`.
 
 
 ### Statusline integration

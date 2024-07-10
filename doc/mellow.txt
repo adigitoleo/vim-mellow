@@ -11,12 +11,12 @@
 CONTENTS						*mellow-contents*
 
 	1. Introduction ............................... |mellow-introduction|
-	2. Installation ............................... |mellow-installation|
-	3. Usage ...................................... |mellow-usage|
-	4. Configuration .............................. |mellow-configuration|
-	5. Customization .............................. |mellow-customization|
-	6. Integration ................................ |mellow-integration|
-	7. Palette .................................... |mellow-palette|
+	2. Usage ...................................... |mellow-usage|
+	3. Configuration .............................. |mellow-configuration|
+	4. Customization .............................. |mellow-customization|
+	5. Integration ................................ |mellow-integration|
+	6. Palette .................................... |mellow-palette|
+	7. Bugs ....................................... |mellow-bugs|
 
 
 ==============================================================================
@@ -31,15 +31,6 @@ syntax highlighting between themes. To get the hex codes, see |mellow-palette|.
 
 NOTE: If you are running *vim in a terminal, Mellow should look a lot better
 when 'termguicolors' is set.
-
-
-==============================================================================
-INSTALLATION						*mellow-installation*
-
-Install the plugin using your preferred plugin manager. Alternatively, *vim
-can load |packages| if they are added to your |'packpath'|. Archives of
-tagged releases are available at
-<https://github.com/adigitoleo/vim-mellow/tags>.
 
 
 ==============================================================================
@@ -158,5 +149,16 @@ The 256-color fallbacks are available from the same functions, if the optional
 argument "256" is provided, e.g.: >
 	echo mellow_palette#Light("256")
 
+
+==============================================================================
+BUGS							*mellow-bugs*
+
+Bug fixes and feature requests are welcome at the github issue tracker: >
+
+	https://github.com/adigitoleo/vim-mellow/issues
+
+Alternatively, patches can be sent to my public inbox: >
+
+	https://lists.sr.ht/~adigitoleo/public-inbox
 
 vim:tw=78:ts=8:noet:ft=help:norl:
