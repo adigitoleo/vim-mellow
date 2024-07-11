@@ -48,7 +48,7 @@ function mellow_palette#Light(...)
         if a:0 && a:1 ==# 'named'
             let l:colors = {}
             for l:index in range(len(l:codes))
-                l:colors[l:names[l:index]] = l:codes[l:index]
+                let l:colors[l:names[l:index]] = l:codes[l:index]
             endfor
             return l:colors
         else
@@ -104,7 +104,7 @@ function mellow_palette#Dark(...)
         if a:0 && a:1 ==# 'named'
             let l:colors = {}
             for l:index in range(len(l:codes))
-                l:colors[l:names[l:index]] = l:codes[l:index]
+                let l:colors[l:names[l:index]] = l:codes[l:index]
             endfor
             return l:colors
         else
