@@ -9,7 +9,7 @@ function mellow_palette#Light(...)
                     \ 235, 210, 107, 216, 102, 95, 173, 223
                     \ ]
     else
-        return [
+        let l:codes = [
                     \ '#0F0908',
                     \ '#AF0032',
                     \ '#4C6E25',
@@ -27,6 +27,33 @@ function mellow_palette#Light(...)
                     \ '#D47D49',
                     \ '#F2DDBC',
                     \ ]
+        let l:names = [
+                    \ 'night_rider',
+                    \ 'shiraz',
+                    \ 'fern_frond',
+                    \ 'leather',
+                    \ 'eggplant',
+                    \ 'buccaneer',
+                    \ 'tuscany',
+                    \ 'grain_brown',
+                    \ 'jon',
+                    \ 'bittersweet',
+                    \ 'sushi',
+                    \ 'light_salmon',
+                    \ 'suva_grey',
+                    \ 'copper_rust',
+                    \ 'raw_sienna',
+                    \ 'sidecar',
+                    \ ]
+        if a:0 && a:1 ==# 'named'
+            let l:colors = {}
+            for l:index in range(len(l:codes))
+                l:colors[l:names[l:index]] = l:codes[l:index]
+            endfor
+            return l:colors
+        else
+            return l:codes
+        endif
     endif
 endfunction
 
@@ -38,7 +65,7 @@ function mellow_palette#Dark(...)
                     \ 235, 210, 107, 216, 247, 95, 173, 223
                     \ ]
     else
-        return [
+        let l:codes = [
                     \ '#0F0908',
                     \ '#AF0032',
                     \ '#577E2A',
@@ -56,5 +83,32 @@ function mellow_palette#Dark(...)
                     \ '#D47D49',
                     \ '#ECCD9D',
                     \ ]
+        let l:names = [
+                    \ 'night_rider',
+                    \ 'pancho',
+                    \ 'shiraz',
+                    \ 'crete',
+                    \ 'muddy_waters',
+                    \ 'magenta',
+                    \ 'buccaneer',
+                    \ 'tuscany',
+                    \ 'akaroa',
+                    \ 'jon',
+                    \ 'bittersweet',
+                    \ 'sushi',
+                    \ 'light_salmon',
+                    \ 'venus',
+                    \ 'copper_rust',
+                    \ 'raw_sienna',
+                    \ ]
+        if a:0 && a:1 ==# 'named'
+            let l:colors = {}
+            for l:index in range(len(l:codes))
+                l:colors[l:names[l:index]] = l:codes[l:index]
+            endfor
+            return l:colors
+        else
+            return l:codes
+        endif
     endif
 endfunction

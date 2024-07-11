@@ -149,6 +149,10 @@ The 256-color fallbacks are available from the same functions, if the optional
 argument "256" is provided, e.g.: >
 	echo mellow_palette#Light("256")
 
+A dictionary with suggested names for the colors is also available, if the
+optional argument "named" is provided instead, e.g.: >
+	echo mellow_palette#Light("named")
+
 
 ==============================================================================
 BUGS							*mellow-bugs*
